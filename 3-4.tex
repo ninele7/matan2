@@ -1,0 +1,215 @@
+\section{Евклидово пространство, метризуемость евклидова пространства, неравенство Коши-Буняковского}
+\subsection{Евклидово пространство}
+
+Пусть $X$ - векторное просранство над полем $\mathbb {R}$. Введем отображение из $X \times X$ в $\mathbb {R}$, называемое скалярным произедением этих векторов, которое любой упорядоченной паре векторов $(x, y) \in X$ ставит в соответствие число из $\mathbb {R}$, таким образом, что:
+
+
+\begin{enumerate} 
+  \item $\forall x,y \in X: \quad (x, y) = (y, x)$,
+  \item  $\forall x,y,z \in X: \quad (x + y, z) = (x, z) + (y, z)$,
+  \item $\forall x,y \in X: \forall \lambda \in \mathbb {R} \quad (\lambda x, y) = \lambda(x, y)$,
+  \item $\forall x \in X: (x, x) \geq 0$, причем $(x, x) = 0$ тогда и только тогда, когда $x = 0$.
+\end{enumerate}
+Линейное(векторное) пространство со скалярным произведением называется евклидовым пространством.
+
+Любое евклидово пространство является метрическим, если $\rho(x, y) = \sqrt{(x - y, x - y)}$. Убедимся в том, что введенная метрика удовлетворяет аксиомам метрики:
+\begin{enumerate} 
+  \item $\rho(x, y) \geq 0$, - очевидно, корень квадратный всегда $\geq 0$ 
+  \item  $\rho(x, y) = 0 \Leftrightarrow x-y = 0, \: x=y$, - очевидно
+  \item $\rho(x, y) = \sqrt{(x - y, x - y)} = \sqrt{(y - x, y - x)}=\rho(y, x)$,
+  \item $\rho(x, y) \leq \rho(x, z) + \rho(y, z)$ (докажем это утверждение после введения неравенства Коши-Буняковского)
+\end{enumerate}
+\subsection{Неравенство Коши-Буняковского}
+Введем определение длины вектора (модуль вектора) как расстояние от нулевого вектора до данного: $\rho(x, 0) = \sqrt{(x, x)}$. Будем обозначать эту величину как модуль вектора, то есть: $\rho(x, 0) = \sqrt{(x, x)} = |x|$
+
+Теперь рассмотрим функцию: 
+$$
+\forall x,y \in X, \: \forall t \in \mathbb {R}, \quad \Phi(t) = (x +ty, x + ty)
+$$
+Раскроем скобки и преобразуем, воспользовавшись свойствами скалярного произведения $(x, y) = (y, x)$ и $(\lambda x, y) = \lambda (x, y)$
+$$
+\Phi(t) = (x +ty, x + ty) = (x, x) + t(y, x) + (x, ty) + t^2(y, y) = t^2(y, t) + 2t(x, y) + (x, x)
+$$
+
+Поскольку $x$ и $y$ мы зафиксировали и рассматриваем  функцию $\Phi(t)$ как функцию переменного $t$, то она квадратична. Также заметим, что она принимает неотрицательные значения, поскольку эта функция является скалярным квадратом.
+
+Теперь рассмотрим значение этой функции как квадратный трехчлен и заметим, что его дискримант $\leq 0$, поскольку главный коэффициент $\geq 0$, как и значение квадратного трехчлена. Найдем значение дискриминанта: 
+$$
+D = [2(x, y)]^2 - 4(y, y) \cdot (x, x) \leq 0
+$$
+
+$$
+[(x, y)]^2 \leq (x, x) \cdot (y, y)
+$$
+
+$$
+|(x, y)| \leq \sqrt{(x, x) \cdot (y, y)}
+$$
+
+$$
+|(x, y)| \leq |x| \cdot |y|
+$$
+Полученное неравенство $|(x, y)| \leq |x| \cdot |y|$ - неравенство Коши-Буняковского.
+
+Докажем выполнение 4-й аксиомы метрики евклидова пространства. Рассмотрим $\rho^2(x, y)$ и преобразуем выражение, воспользовавшись свойством скалярного произведения $(x, y) = (y, x)$:
+$$
+\rho^2(x, y) = (x - y, x - y) = (x, x) = (x, x) - (y, x) - (x, y) + (y, y) = (x, x) - 2(x, y) + (y, y)
+$$
+Теперь сделаем оценку $-(x, y) \leq |(x, y)|$ и воспользуемся неравенством Коши-Буняковского:
+\begin{equation}
+(x, x) - 2(x, y) + (y, y) \leq (x, x) + 2 \sqrt{(x, x)} \cdot \sqrt{(y, y)} + (y, y)
+\end{equation}
+Выражение $(x - y, x - y)$ представимо в виде $(x - z - (y - z), x - z - (y - z))$. Подставляем $x = x - z$ и $y = y - z$ в выражение $(1)$:
+\begin{equation*}
+\begin{gathered}
+\rho^2(x, y) \leq (x - z, x - z) + 2\sqrt{x - z, x - z} + 2\sqrt{y - z, y - z} + (y - z, y - z) = \\
+\rho^2(x, z) + 2\rho(x, z) \cdot \rho(y, z) + \rho^2(y, z) = [\rho(x, z) + \rho(y, z)]^2
+\end{gathered}
+\end{equation*}
+Извлекаем корень из двух частей неравенства:
+$$
+\rho(x, y) \leq \rho(x, z) + \rho(y, z)
+$$
+Выполнение 4-й аксиомы доказано.
+
+\section{Последовательность в пространстве $\mathbb {R}^m$. Сходимость последовательности в метрическом пространстве. Основные свойства сходящихся последовательностей (ограниченность, единственность предела, сходимость подпоследовательности, арифметические операции). Критерий сходимости последовательности в $m$-мерном пространстве.}
+\subsection{Последовательность в пространстве $\mathbb {R}^m$. Сходимость последовательности в метрическом пространстве.}
+Последовательностью в $\mathbb {R}^m$ называется множество векторов в $\mathbb {R}^m$
+$$
+\textbf{x}^{(1)}, \textbf{x}^{(2)}, ..., \textbf{x}^{(n)}
+$$
+Обозначим последовательность векторов таким образом: 
+$$ \textbf{x}^{(n)} = (x^{(n)}_1, x^{(n)}_2, ..., x^{(n)}_m)$$
+Где $\textbf{x}^{(n)}$ - векторы, $x^{(n)}_1, x^{(n)}_2, ..., x^{(n)}_m$ - координаты соответствующих векторов.
+
+Последовательность$\{x^{(n)}\}^{\infty}_{n=1}$ - сходится, если 
+$$
+\exists \textbf {a} \in \mathbb {R}^m \; \forall \varepsilon \geq 0 \; \exists N_{\varepsilon} \in \mathbb {N} \; \forall n > N_{\varepsilon} \quad \rho(\textbf{x}^{(n)}, a) < {\varepsilon}, \quad \textbf {a} = \lim_{n\to\infty}{\textbf{x}^{(n)}}
+$$
+Можем переписать это в другом виде: 
+$$
+\textbf {a} = \lim_{n\to\infty}{\textbf{x}^{(n)}} \Leftrightarrow \forall \varepsilon \geq 0 \; \exists N_{\varepsilon} \in \mathbb {N} \; \forall n > N_{\varepsilon} \quad \textbf{x}^{(n)} \in B(\textbf {a}, \varepsilon)
+$$
+То есть начиная с некоторого номера в $\varepsilon$-шаре с центром в точке $\textbf {a}$ лежит бесконечное число элементов последовательности.
+\subsection{Свойства сходящихся последовательностей}
+\begin{enumerate} 
+  \item 
+  Если $\textbf {a} = \lim_{n\to\infty}{\textbf{x}^{(n)}}$, то за пределами любого $B(\textbf {a}, \varepsilon)$, может находится не более конечного числа элементов последовательности.
+  \item
+  Из первого свойства вытекает, что сходящаяся последовательность ограничена.
+  \item
+  Единственность предела.
+  
+  Предположим, что последовательность имеет два предела, тогда 
+$$
+\exists \textbf {a} \in \mathbb {R}^m \; \forall \varepsilon \geq 0 \; \exists N_{\varepsilon} \in \mathbb {N} \; \forall n > N_{\varepsilon} \quad \rho(\textbf{x}^{(n)}, a) < {\varepsilon}, \quad \textbf {a} = \lim_{n\to\infty}{\textbf{x}^{(n)}}
+$$
+
+$$
+\exists \textbf {b} \in \mathbb {R}^m \; \forall \varepsilon \geq 0 \; \exists K_{\varepsilon} \in \mathbb {N} \; \forall k > K_{\varepsilon} \quad \rho(\textbf{x}^{(n)}, b) < {\varepsilon}, \quad \textbf {b} = \lim_{n\to\infty}{\textbf{x}^{(n)}}
+$$
+Теперь имеем, что начиная с некоторого номера в $B(\textbf {a}, \varepsilon)$ лежит бесконечное число элементов, и начиная с некоторого номера в $B(\textbf {b}, \varepsilon)$ тоже лежит бесконечное число элемнтов последовательности. Тогда по свойству сходящейся последовательности (1) приходим к противоречию.
+  \item
+  Если последовательность сходится к вектору $\textbf {a}$, то любая её подпоследовательность сходится $\textbf {a}$.
+  $$
+  \forall \{m_k\}^{\infty}_{k=1}, \; \textbf {x}^{(m_k)} \underset{k \to \infty}{\longrightarrow} \; \textbf {a}
+  $$
+  $\{m_k\}^{\infty}_{k=1}$ - строго возрастающая последовательность
+  \item
+  $$
+  \textbf {x}^{(n)} \underset{n \to \infty}{\longrightarrow} \; \textbf {a} \; \Rightarrow |\textbf {x}^{(n)}| \underset{n \to \infty}{\longrightarrow} |\textbf {a}|
+  $$
+  Уточним, что слева идёт речь о сходимости в $\mathbb {R}^m$, а справа о сходимости в $\mathbb {R}$.
+  
+  Доказательство:
+  
+  Воспользуемся определением модуля вектора:
+  \begin{equation}
+  ||\textbf {x}^{(n)}| - |\textbf {a}|| = |\rho(\textbf {x}^{(n)}, 0) - \rho(\textbf {a}, 0)|
+  \end{equation}
+  Распишем $\rho(\textbf {x}^{(n)}, 0)$ по неравенству треугольника:
+  $$
+  \rho(\textbf {x}^{(n)}, 0) \leq \rho(\textbf {x}^{(n)}, \textbf {a}) + \rho(\textbf {a}, 0) 
+  $$
+  Представим в другом виде:
+  $$
+  \rho(\textbf {x}^{(n)}, 0) - \rho(\textbf {a}, 0) \leq \rho(\textbf {x}^{(n)}, a)
+  $$
+  Воспользуемся этой оценкой в выражении (3) и вспомним, что по условию ${\rho(\textbf {x}^{(n)}, a) \underset{n \to \infty}{\longrightarrow} 0}$:
+  $$
+  ||\textbf {x}^{(n)}| - |\textbf {a}|| = |\rho(\textbf {x}^{(n)}, 0) - \rho(\textbf {a}, 0)| \leq \rho(\textbf {x}^{(n)}, a) \underset{n \to \infty}{\longrightarrow} 0
+  $$
+  Утверждение доказано.
+  \item
+  \begin{equation*}
+  \begin{gathered}
+  \textbf {x}^{(n)} \longrightarrow \textbf {a}, \; \textbf {y}^{(n)} \longrightarrow \textbf {b} \Rightarrow \forall \lambda, \mu \in \mathbb {R}\\
+  \lambda \textbf {x}^{(n)} + \mu \textbf {y}^{(n)} \longrightarrow \lambda \textbf {a} + \mu \textbf {b}
+  \end{gathered}
+  \end{equation*}
+  
+  Доказательство:
+  
+  Зафиксируем метрику $\rho_0(x, y) = \underset{\forall i=1, m}{\max}{|x_i - y_i|}$
+  
+  По условию $\textbf {x}^{(n)}$ - сходится, то есть
+  \begin{equation*}
+  \begin{gathered}
+  \forall \varepsilon > 0 \; \forall n > N_1(\varepsilon) \;\rho_0(\textbf {x}, a) = \underset{\forall i=1, m}{\max}{|\textbf{x}^{(n)}_i - \textbf{a}_i|} < \frac{\varepsilon}{2|\lambda|}\\
+    \forall \varepsilon > 0 \; \forall n > N_2(\varepsilon) \;\rho_0(\textbf {y}, b) = \underset{\forall i=1, m}{\max}{|\textbf{y}^{(n)}_i - b_i|} < \frac{\varepsilon}{2|\mu|}
+  \end{gathered}
+  \end{equation*}
+  
+  Рассмотрим расстояние между величинами $ \lambda \textbf {x}^{(n)} + \mu \textbf {y}^{(n)}$ и $\lambda \textbf {a} + \mu \textbf {b}$:
+  $$
+  \rho(\lambda \textbf {x}^{(n)} + \mu \textbf {y}^{(n)}, \lambda \textbf {a} + \mu \textbf {b}) = \underset{\forall i=1, m}{\max}{|(\lambda \textbf {x}^{(n)}_i + \mu \textbf {y}^{(n)}_i) - (\lambda \textbf {a}_i + \mu \textbf {b}_i)|}
+  $$
+  
+  Воспользуемся неравенством треугольника и вынесем константы:
+  $$
+  \underset{\forall i=1, m}{\max}{|(\lambda \textbf {x}^{(n)}_i + \mu \textbf {y}^{(n)}_i) - (\lambda \textbf {a}_i + \mu \textbf {b}_i)|} \leq \underset{\forall i=1, m}{\max}{(|\lambda| |\textbf {x}^{(n)}_i - \textbf {a}_i| + |\mu| |\textbf {y}^{(n)}_i - \textbf {b}_i|)}
+  $$
+  Поскольку максимум суммы не превосходит суммы максимумов, имеем:
+  $$
+  \underset{\forall i=1, m}{\max}{(|\lambda| |\textbf {x}^{(n)}_i - \textbf {a}_i| + |\mu| |\textbf {y}^{(n)}_i - \textbf {b}_i|)} \leq |\lambda| \underset{\forall i=1, m}{\max}{|\textbf {x}^{(n)}_i - \textbf {a}_i|} + \mu \underset{\forall i=1, m}{\max}{|\textbf {y}^{(n)}_i - \textbf {b}_i|}
+  $$
+  Заметим, что в правой части неравенства стоит $\rho(\textbf {x}^{(n)}_i, \textbf {a}_i )$ и $\rho(\textbf {y}^{(n)}_i, \textbf {b}_i )$. Таким образом
+  $$
+  \forall n > \max\{N_1(\varepsilon), N_2(\varepsilon)\} \quad \rho(\lambda \textbf {x}^{(n)} + \mu \textbf {y}^{(n)}, \lambda \textbf {a} + \mu \textbf {b}) \leq |\lambda| \cdot \rho(\textbf {x}^{(n)}_i, \textbf {a}_i ) + |\mu| \cdot \rho(\textbf {y}^{(n)}_i, \textbf {b}_i ) < \varepsilon
+  $$
+  Утверждение доказано.
+  \subsection{Критерий сходимости в $\mathbb {R}^m$}
+  
+  Последовательность векторов сходится к некоторому вектору $\textbf {a}$, тогда и только тогда, когда она сходится покоординатно к вектору $\textbf {a}$.
+  $$
+  \textbf {x}^{(n)}  \underset{n \to \infty}{\longrightarrow} \textbf {a} \Leftrightarrow \forall i = \overline{1,m} \quad x^{(n)}_i \longrightarrow a_i
+  $$
+  
+  Доказательство:
+ 
+  Необходимость. Зафиксируем евклидову метрику. $\textbf {x}^{(n)}  \underset{n \to \infty}{\longrightarrow} \textbf {a}$ в $\mathbb {R}^m$, это значит что
+  \begin{equation*}
+  \begin{gathered}
+  \forall \varepsilon > 0 \; \exists N_{\varepsilon} \in \mathbb {N} \; \forall n > N_{\varepsilon} \quad \rho_e(\textbf {x}^{(n)}, \textbf {a}) < \varepsilon\\
+  \sqrt{(x_1 - a_1)^2 + (x_2 - a_2)^2 + ... + (x_m - a_m)^2} < \varepsilon\\
+  \forall i = \overline{1,m} \quad |x_i - a_i| \leq \sum\limits_{i=1}^m (x_m - a_m) < \varepsilon
+  \end{gathered}
+  \end{equation*}
+  
+  Достаточность. Запишем условие сходимости i-й последовательности координат
+  $$
+  \forall i = \overline{1,m} \quad \forall \varepsilon > 0 \; \exists N_{\varepsilon, i} \in \mathbb {N} \; \forall n > N_{\varepsilon, i} \quad \Rightarrow |x^{(n)}_i - a_i| < \frac{\varepsilon}{\sqrt{m}}
+  $$
+  Выберем такой номер, начиная с выполняется это неравенство для каждой i-й последовательности координат
+  $$
+  N_{\varepsilon} = \underset{i=\overline{1, m}}{\max\{N_{\varepsilon, i}\}}
+  $$
+  Посчитаем расстояние между вектором $\textbf {x}^{(n)}$ и вектором $\textbf {a}$
+  $$
+  \forall n > N_{\varepsilon} \quad \rho(\textbf {x}^{(n)}, \textbf {a}) = \sqrt{\sum\limits_{i=1}^m (\textbf {x}^{(n)}_i - \textbf {a}_i)^2} = \sqrt{\sum\limits_{i=1}^m \frac{{\varepsilon}^2}{m}}
+  $$
+  Вынесем константу, при этом под знаком суммы остануться $m$ штук единиц
+  $$
+  \rho(\textbf {x}^{(n)}, \textbf {a}) = \sqrt{\sum\limits_{i=1}^m \frac{{\varepsilon}^2}{m}} = \sqrt{\frac{{\varepsilon}^2}{m}} \cdot \sqrt{m} = \varepsilon
+  $$
+\end{enumerate}

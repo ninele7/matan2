@@ -1,0 +1,34 @@
+
+\section{Понятие предела векторной функции многих переменных.}
+
+
+\textbf{Теорема} 
+
+Пусть функция $f(x;y)$ определена на множестве $X\times{Y}$ и $x_0\in{X'}, y_0\in{Y'}$. 
+Если существует $\underset{y\rightarrow{y_0}}{\underset{x\rightarrow{x_0}}{lim}}f(x,y)=A$ и для любого $x\in{X}$, $x\neq{x_0}$, 
+существует $\underset{y\rightarrow{y_0}}{lim}f(x,y)=\varphi(x)$, то существует и 
+$\underset{x\rightarrow{x_0}}{lim}\underset{y\rightarrow{y_0}}{lim}f(x,y)$, он равен $A$.
+
+\textit{Доказательство.} По определению двойного предела
+
+$$\forall\epsilon>0\;\exists\delta=\delta(\epsilon)>0\;\forall(x,y)\in{X}\times{Y}$$
+$$
+\begin{pmatrix}
+0<\vert{x-x_0}\vert<\delta, & \; \\
+\; & \Rightarrow\vert{f(x,y)-A}\vert<\frac{\epsilon}{2} \\
+0<\vert{y-y_0}\vert<\delta, & \;
+\end{pmatrix}
+.$$
+
+По определению однократного предела для любого $x\in{X}$, $x\neq{x_0}$,
+
+$$\forall\epsilon>0\;\;\exists\tilde{\delta}=\tilde{\delta}(\epsilon)>0\;\;\forall{y}\in{Y}$$
+$$(0<\vert{y-y_0}\vert<\tilde{\delta}\Rightarrow\vert{f(x,y)-\varphi(x)}\vert<\frac{\epsilon}{2})$$
+
+Возьмем $x\in{X}$ из проколотой $\delta$-окрестности точки $x_0$ и рассмотрим разность $\varphi(x)-A$. 
+Прибавим и отнимем в этом выражении $f(x; y)$ с $y\in@Y$, $0<\vert{y-y_0}\vert<min\lbrace\delta,\tilde{\delta}\rbrace$, 
+и получим оценку
+
+$$\vert\varphi(x)-A\vert=\vert\varphi(x)\pm{f(x,y)}-A\leq\vert\varphi(x)-f(x,y)\vert+\vert{f(x,y)-A}\vert<\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon,$$
+
+т. е. $\underset{x\rightarrow{x_0}}{lim}\underset{y\rightarrow{y_0}}{lim}f(x,y)=A$.

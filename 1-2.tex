@@ -1,0 +1,88 @@
+\section{Линейное (векторное) пространство. Векторное пространство $\mathbb{R}^m$.}
+\subsection{Линейное пространство}
+Пусть дано поле $F$. Линейным пространством над полем $F$ называется произвольное не пустое множество $V$, на котором заданы операция сложения, являющаяся Абелевой группой, и операция умножения вектора на любой скаляр из $F$. Умножение на скаляр обладает следующими свойствами:
+\begin{itemize}
+    \item $x, y \in V \land t \in F \implies t(x + y) = tx + ty$
+    \item $t, s \in F \land x \in F \implies (t + s)x = tx + sx$
+    \item $t, s \in F \land x \in F \implies t(sx) = (ts)x$
+    \item $x \in V \implies 1x = x$
+\end{itemize}
+\subsection{Векторное пространство $\mathbb{R}^m$}
+Теперь определим пространство $\mathbb{R}^m$. Возьмем множество строк вида $(x_1, x_2, \dots, x_m)$, где $x_i \in \mathbb{R}$. Определим операции и сущности. 
+\begin{itemize}
+    \item Сложение: $(x_1, x_2, \dots, x_m) + (y_1, y_2, \dots, y_m) = (x_1 + y_1, x_2 + y_2, \dots, x_m + y_m)$
+    \item $0$: $(0, 0, \dots, 0)$
+    \item Умножение на скаляр $t \in \mathbb{R}$: $t(x_1, x_2, \dots, x_m) = (tx_1, tx_2, \dots, tx_m)$
+\end{itemize} 
+Такое определение очевидным образом будет удовлетворять всем аксиомам линейного пространства.
+
+\section{Метрическое пространство. Метрическое пространство $\mathbb{R}^m$. Метрики $\rho_0$, $\rho_1$ и $\rho_e$, их эквивалентность.}
+\subsection{Метрическое пространство}
+Метрика на $X$ --- отображение $\rho : X \times X \to \mathbb{R}$, для которого выполняется следующий набор аксиом: 
+\begin{itemize}
+    \item $\rho(x, y) \geq 0$
+    \item $\rho(x, y) = 0 \equiv x = y$
+    \item $\rho(x, y) = \rho(y, x)$
+    \item $\rho(x, y) \leq \rho(x, z) + \rho(z, y)$
+\end{itemize}
+Пространство с определенной на нем метрикой называется метрическим. \\
+Метрики $\rho_1$ и $\rho_2$ эквивалентны если: 
+$\exists a, b \in \mathbb{R}^+ : \forall x, y \in X : a\rho_2(x, y) \leq \rho_1(x, y) \leq b\rho_2(x, y)$.
+\begin{itemize}
+    \item Рефлексивность очевидна, достаточно взять $a = b = 1$
+    \item Докажем симметричность:
+    $$
+    a\rho_2(x, y) \leq \rho_1(x, y) \leq b\rho_2(x, y) \implies
+    a\rho_2(x, y) \leq \rho_1(x, y) \land \rho_1(x, y) \leq b\rho_2(x, y) \implies
+    $$
+    $$
+    \rho_2(x, y) \leq \frac{1}{a}\rho_1(x, y) \land \frac{1}{b}\rho_1(x, y) \leq \rho_2(x, y) \implies \frac{1}{b}\rho_1(x, y) \leq \rho_2(x, y) \leq \frac{1}{a}\rho_1(x, y)
+    $$
+    \item Докажем транзитивность
+    $$
+    a\rho_2(x, y) \leq \rho_1(x, y) \leq b\rho_2(x, y) \land c\rho_3(x, y) \leq \rho_2(x, y) \leq d\rho_3(x, y) \implies
+    $$
+    $$
+    ac\rho_3(x,y) \leq a\rho_2(x,y) \leq \rho_1(x,y) \leq b\rho_2(x,y) \leq bd\rho_3(x, y)
+    $$
+\end{itemize}
+\subsection{Метрическое пространство $\mathbb{R}^m$}
+Введем несколько метрик в $\mathbb{R}^m$:
+\begin{itemize}
+    \item $\rho_0(x, y) = \max_{k \in \overline{1, m}} |x_k - y_k|$
+    \begin{itemize}
+        \item $\rho_0(x, y) \geq 0$ потому что это верно для модуля.
+        \item $\rho_0(x,y) = \rho_0(y, x)$ потому что значения под модулем можно поменять местами.
+        \item $\rho_0(x, y) = 0 \equiv
+        (\forall k \in \overline{1, m} : |x_k - y_k| = 0 \equiv x_k = y_k)
+        \equiv x = y$
+        \item $\rho_0(x, y) = 
+        \max_{k \in \overline{1, m}} |x_k - y_k| \leq
+        |x_k - z_k| + |z_k - y_k| \leq
+        \max_{i \in \overline{1, m}} |x_i - z_i| + |z_i - y_i| =
+        \rho_0(x, z) + \rho_0(z, y)$
+    \end{itemize}
+    \item $\rho_1(x, y) = \sum_{k \in \overline{1, m}} |x_i - y_i|$
+    \begin{itemize}
+        \item $\rho_1(x, y) \geq 0$ сумма положительных величин
+        \item $\rho_1(x,y) = \rho_p(y, x)$ аналогично $\rho_0$
+        \item $\rho_1(x, y) = 0$ аналогично $\rho_0$
+        \item $\rho_1(x, y) = \rho_e(x, z) + \rho_e(z, y)$ следует из правила треугольника для модуля
+    \end{itemize}
+    \item $\rho_e(x, y)$ --- Евклидова метрика. Задается в любом Евклидовом пространстве как $\rho_e(x, y) = \sqrt{(x-y) \circ (x-y)}$ где точка --- скалярное произведение.
+    \begin{itemize}
+        \item Корректность этой метрики будет доказана далее.
+    \end{itemize}
+    \item В частном случае, если скалярное произведение определить как сумму покомпонентных произведений: $x \circ y = x_1y_1 + x_2y_2 + \dots + x_my_m$, то эта метрика примет вид: $\rho_e(x, y) = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + \dots + (x_m - y_m)^2} = \rho_2(x, y)$
+\end{itemize}
+\subsection{Эквивалентность метрик}
+Рассмотрим $\rho_0$ и $\rho_1$:
+$$
+\rho_0(x,y) \leq \rho_1(x,y) \leq m\rho_0(x,y)
+$$
+$\rho_0$ всегда не больше $\rho_1$, так как $\rho_1$ равна $\rho_0$ плюс несколько неотрицательных слагаемых. Но так как $\rho_0$ является максимумом из всех слагаемых $\rho_1$, то ей можно оценить каждое из слагаемых. \\
+Рассмотрим $\rho_0$ и $\rho_2$:
+$$
+\rho_0(x,y) \leq \rho_2(x,y) \leq \sqrt{m} \rho_0(x,y)
+$$
+Аналогичные рассуждения, но все происходит под корнем.

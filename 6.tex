@@ -1,0 +1,38 @@
+\section{Критерий Коши.}
+
+$\{x^{(n)}\}_{n=1}^{\infty}$ - \textcolor{red} {фундаментальная} в $\mathbb {R}^m$, если $\forall \varepsilon > 0$ $\exists n_\varepsilon \in \mathbb {N}$ : $\forall n, m > n_\varepsilon$
+
+$\Rightarrow$ $\rho (x^{(n)}, x^{(m)})  < \varepsilon$
+\vspace{1cm}
+
+\textcolor{red}{Критерий Коши}:  $\{x^{(n)}\}_{n=1}^{\infty}$ - сходится $\Leftrightarrow$ $\{x^{(n)}\}_{n=1}^{\infty}$ - фундаментальная.
+\vspace{1cm}
+
+\textcolor{red}{Доказательство}:
+
+1. Из сходимости: $\forall \varepsilon > 0$ $ \exists n_\varepsilon \in \mathbb {N}$ $\forall n > n_\varepsilon $ $\Rightarrow$ $\rho(x^{(n)}, a) < \frac{\varepsilon}{2}$
+
+$\forall \varepsilon > 0$ $\exists n_\varepsilon \in \mathbb {N}$ $\forall m > n_\varepsilon $ $\Rightarrow$ $\rho(x^{(m)}, a) < \frac{\varepsilon}{2}$
+
+
+$\rho(x^{(n)}, x^{(m)})$ < $\rho(x^{(n)}, a) + \rho(x^{(m)}, a) = \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$ $\Rightarrow$
+$\{x^{(n)}\}_{n=1}^{\infty}$ - фундаентальная
+\vspace{1cm}
+
+2. $\{x^{(n)}\}_{n=1}^{\infty}$ - фундаентальная 
+
+$\forall \varepsilon > 0$ $\exists N_1 \in \mathbb {N}$ : $\forall n, m > N_1$ $\Rightarrow$ $\rho (x^{(n)}, x^{(m)})  < \frac{\varepsilon}{2}$
+
+Так как фундаментальная последовательность $\{x_n\}$ является ограниченной, то по теореме Больцано-Вейерштрасса она содержит сходящуюся подпоследовательность $\{x_{n_k}\}$. Пусть ее предел равен $a$, т.е. $\lim_{k\to\infty} x^{(n_k)} = a$
+
+$\forall \varepsilon > 0$ $\exists N_2 \in \mathbb {N}$ $\forall k > N_2$ $\Rightarrow$ $\rho (x^{(n_k)}, a)  < \frac{\varepsilon}{2}$
+
+$N_\varepsilon = \max(N_1, N_2)$ 
+$n_k \ge N_\varepsilon$
+Тогда при $m = n_k \forall n > N_\varepsilon$ 
+
+$\rho (x^n, x^{n_k}) < \frac{\varepsilon}{2}$
+
+$\rho (x^n, a) \leq \rho (x^n, x^{n_k}) + \rho (x^n, a) < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$, т.е.
+
+$\lim_{n\to\infty} x^{(n)} = a$

@@ -1,0 +1,78 @@
+\section{Элементарные свойства функций многих переменных, связанные с пределами.}
+
+\subsection{Единственность предела функции}
+
+Следует из единственности предела последовательности по Гейне 
+(отсылка к 7 билету)
+$$
+f(x^{(n)}) \longrightarrow A
+$$
+
+
+\subsection{Локальная ограниченность}
+
+Если в точке А(большое) функция имеет конечный предел, то найдется 
+такая проколотая окрестность точки а(маленькое), в которой функция 
+ограничена. Можно записать как определение по Коши, но с небольшим 
+дополнением:
+$$
+\forall \varepsilon > 0 \ \exists \delta(\varepsilon) > 0
+\ : \ \forall x\in D \ \cap \ B(a,\delta(\varepsilon)), x\ne a
+\Rightarrow \mid f(x) - A \mid < \varepsilon
+$$
+Зафиксируем здесь $\varepsilon = 1$ и получим, что 
+$A-1<f(x)<A+1$
+
+
+\subsection{Отделимость от нуля}
+
+Если $\exists \lim_{x\to a}{f(x)} = A \ne 0$, то 
+$$
+\exists R>0 \ \exists \delta > 0 \ : \ \forall x\in D \ \cap \ 
+B(a,\delta(\varepsilon)), x\ne a, \mid f(x) \mid > R
+$$
+Для доказательства посмотрим на опредление по Коши и заметим, что 
+в силу обратного неравенства треугольника мы можем написать в 
+правой части определения 
+$$
+\vert\mid f(x)\mid - \mid A\mid\vert \ \leq \ \mid f(x) - A\mid \ < \ \varepsilon
+$$
+Тогда можем заметить, что при раскрытии модуля получится следующее:
+$$
+\mid A\mid - \ \varepsilon \ \leq \ \mid f(x)\mid \ \leq \ \mid A\mid + \ \varepsilon
+$$
+Рассмотрим левую часть двойного неравенства. Так как эпсилон у нас любое, то мы имеем право взять 
+$\varepsilon = {\mid A\mid\over2} > 0 \ $(т.к. $A\ne0$). Тогда получим в левой части
+$\mid A\mid - {\mid A\mid\over2} = {\mid A\mid\over2}$ и возьмем его за R. Вот мы и получили
+определение отделимости от нуля, где $\delta = \delta(\varepsilon = \mid A\mid)$
+
+
+\subsection{Арифметические свойства}
+
+$$
+\exists \lim_{x\to a}{f(x)} = A \ \ \exists \lim_{x\to a}{g(x)} = B
+$$
+\subsubsection{Сложение(вычитание)}
+$$
+\lim_{x\to a}{(f(x) + g(x))} = A + B
+$$
+\subsubsection{Умножение}
+$$
+\lim_{x\to a}{(f(x) * g(x))} = A * B
+$$
+\subsubsection{Деление}
+$$
+B \ne0 \Rightarrow \lim_{x\to a}{f(x)\over g(x)} = {A\over B}
+$$
+
+
+\subsection{Неравенства}
+Если две функции имеют предел и связаны каким-то неравенством, то пределы будут связаны таким же неравенством
+$$
+f(x) \leq g(x), x\in B(a, R), x\ne a \ \exists \lim_{x\to a}{f(x)} = A \ \exists\lim_{x\to a}{g(x)} = B \ \Rightarrow \ A\leq B
+$$
+В другую сторону так работает только со строгим неравенством:
+$$
+\exists \lim_{x\to a}{f(x)} = A \ \exists\lim_{x\to a}{g(x)} = B \ A < B \Rightarrow 
+\exists \varepsilon > 0 \ : \ \forall x \in B(a, \varepsilon), x\ne a \Rightarrow f(x) < g(x)
+$$
