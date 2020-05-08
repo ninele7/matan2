@@ -1,0 +1,56 @@
+\documentclass{article}
+
+%Russian-specific packages
+%--------------------------------------
+\usepackage[russian]{babel}
+%--------------------------------------
+
+%Hyphenation rules
+%--------------------------------------
+\usepackage{hyphenat}
+%--------------------------------------
+
+%Math
+%--------------------------------------
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{accents}
+\usepackage{systeme}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\sign}{sign}
+\newcommand\aug{\fboxsep=-\fboxrule\!\!\!\fbox{\strut}\!\!\!}
+%-------------------------------------- 
+
+%Hyperlinks
+%--------------------------------------
+\usepackage[svgnames]{xcolor}
+\usepackage[colorlinks=true, linkcolor=Blue, urlcolor=Blue]{hyperref}
+%--------------------------------------
+
+%Graphics
+%--------------------------------------
+\usepackage{graphicx}
+\usepackage{wrapfig}
+%--------------------------------------
+
+%errors fix
+%--------------------------------------
+\usepackage{microtype}
+\usepackage[a4paper,left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{verbatim}
+%--------------------------------------
+
+\begin{document}
+\input{1-2.tex}
+\input{3-4.tex}
+\input{5.tex}
+\input{6.tex}
+\input{7.tex}
+\input{8.tex}
+\input{9.tex}
+\input{10.tex}
+
+\end{document}
