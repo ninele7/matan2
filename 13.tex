@@ -1,0 +1,28 @@
+\section{Понятие сложной функции. Теорема о непрерывности сложной функции.}
+
+Теорема о непрерывности сложной функции. 
+Пусть отображение $x = \phi (x)$ определено в некоторой окрестности точки $t_0 = (t^0_1, t^0_2, ..., t^0_m) \in R$ и непрерывным образом отображает ее в точку $x_0 = (x_1^0, x_2^0, ..., x_n^0) \in R^m$. Пусть функция \emph{f(x)} определена в некоторой окрестности точки $x_0$ и непрерывна в этой точке. Тогда сложная функция $F(t) = f(\phi (t))$ непрерывна в точке $t_0$.
+
+\subsection{Доказательство}
+
+Заметим, что для отображения 
+
+\begin{displaymath}
+    \phi (t) = (\phi _1(t), \phi _2(t), ..., \phi _n(t))
+\end{displaymath}
+
+непрерывность в точке $t_0$ означает непрерывность каждой из функций $\phi _i(t)$ в точке $t_0$ как функции m переменных, т.е. если $\{t^p\} \subset R^m$ и $t^p \underset{p \rightarrow \infty}{\longrightarrow} t_0$, то
+
+\begin{displaymath}
+    \phi (t^p) = (\phi _1(t^p), \phi _2(t^p), ..., \phi _n(t^p)) \underset{p \rightarrow \infty}{\longrightarrow} 
+\end{displaymath}
+
+\begin{displaymath}
+    \underset{p \rightarrow \infty}{\longrightarrow} (\phi _1(t_0), \phi _2(t_0), ..., \phi _n(t_0)) = (x_1^0, x_2^0, ..., x_n^0) = x_0.
+\end{displaymath}
+
+Положим $x^p = \phi (t^p)$, тогда $x^p \underset{p \rightarrow \infty}{\longrightarrow} x_0$. В силу непрерывности функции $f$, $f(x^p) \underset{p \rightarrow \infty}{\longrightarrow} f(x_0)$, т.е. 
+
+\begin{displaymath}
+    F(t^p) = f(\phi (t^p)) \underset{p \rightarrow \infty}{ \longrightarrow} f(x_0) = f(\phi (t_0)) = F(t_0)
+\end{displaymath}
