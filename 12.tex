@@ -1,0 +1,32 @@
+\section{Основные свойства непрерывных функций. Устойчивость знака непрерывных функций}
+\subsection{Основные свойства непрерывных функций.}
+1. $f + g$ - непрерывна (в $\mathbb{R}^{k}$)\\
+2. $f - g$ - непрерывна (в $\mathbb{R}^{k}$)\\
+3. $f \cdot g$ - непрерывна (только в $\mathbb{R}$)\\
+4. $f \over g$ - непрерывна (только в $\mathbb{R}$, если $g \neq 0 $) \\
+5. сохранение знака непрерывной функции (только в $\mathbb{R}$)
+
+\subsection{Устойчивость знака непрерывных функций.}
+\textbf{Формулировка:}
+Если $f(a) > 0 \ (f(a) < 0 )$ и $f$ - непрерывна в точке $a$, то найдутся такие $O(a)$ и $r>0$, что\\
+$$
+	f(x) \geq r > 0 \ (f(x) \leq -r < 0)
+$$
+при $x \in O(a) \cap X$\\
+\textbf{Доказательство:}\\
+Если $a \in X'$, то $\lim_{x\to a}{f(x)} = f(a)$, т.е
+$$
+\forall \varepsilon>0 \quad \exists \delta(\varepsilon)>0 \ \forall x \in O_{\delta}(a) \cap X
+\Rightarrow |f(x)- f(a)| < \varepsilon
+$$
+Пусть $f(a)>0$. Положим $\varepsilon$ = ${f(a)\over 2} > 0$, по нему найдем $\delta(\varepsilon)$ и для любого $x \in O_{\delta}(a) \cap X$ получим
+\begin{equation*}
+\begin{gathered}
+|f(x) - f(a)| < {f(a)\over 2}\\
+f(a) - {f(a)\over 2} < f(x) < {3\over 2} f(a)\\
+\end{gathered}
+\end{equation*}
+откуда
+$$
+	f(x)> r = {f(a)\over 2} > 0
+$$

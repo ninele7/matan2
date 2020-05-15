@@ -1,0 +1,54 @@
+\section{Определения непрерывности функции многих переменных по Коши и по Гейне. 
+	Непрерывность на множестве. 
+	Непрерывность в изолированной точке.}
+\subsection{Определения непрерывности по Коши и по Гейне}
+	Пусть задана некоторая область $D \subseteq \mathbb{R}^m$ и для $ \forall x \in D \rightarrow \ ! y \in \mathbb{R}$, тогда функция определена на $D$, и $y=f(x)=f(x_{1}, x_{2}, ... , x_{n})$. Говорят, что функция $f$ - непрерывна в $a \in D$, если
+	$$ 
+		\exists \lim_{\substack{x_{1}\to a_{1}\\ ... \\{x_{n}\to a_{n}}}}{f(x_{1},..., x_{n})} = f(a_{1},..., a_{n})
+	$$
+	\textbf{по Гейне:}
+	$$
+		\forall x^{(n)} \in D, \ x^{(n)} \underset{n \rightarrow \infty}{\longrightarrow} a \ \Rightarrow \
+		y^{(n)} = f(x^{(n)}) \rightarrow f(a) \in \mathbb{R}^{k}
+	$$
+	это означает, что какую бы последовательность векторов, сходящуюся к $a$, ни взять, соответствующая последовательность значений функции
+	$
+		f(x^{(1)}), f(x^{(2)}), ..., f(x^{(n)})
+	$
+	сходится к $f(a)$. \\
+	Стоит также уточнить, что если f - скалярная функция, то $f(a) \in \mathbb{R}$, а если f - вектор-функция, то
+	$$
+		f: D \in \mathbb{R}^{n} \rightarrow \mathbb{R}^{k}
+	$$
+	$$
+		x = (x_{1}, x_{2}, ... , x_{n}) \rightarrow y = (y_{1}, y_{2}, ... , y_{k})
+	$$
+	где
+	\begin{equation*}
+	y = 
+	\begin{cases}
+	y_{1} =y_{1}(x_{1}, x_{2}, ... , x_{n}) \in \mathbb{R}\\
+	... \\
+	y_{k} =y_{k}(x_{1}, x_{2}, ... , x_{n}) \in \mathbb{R}
+	\end{cases}
+	\end{equation*}
+	- система k скалярных функций.
+	\\\\
+	\textbf{по Коши:}
+	$$
+		\forall \varepsilon>0 \quad \exists \delta(\varepsilon)>0 :\ \forall x \in D \cap B(a, \delta)
+		\Rightarrow 
+	$$
+	для скалярной функции: $|f(x) - f(a)| < \varepsilon$,
+	для вектор-функции: $f(x) \in B(a, \varepsilon)$.\\
+	Также можно записать и на языке метрик:
+	$$
+	\forall \varepsilon>0 \quad \exists \delta(\varepsilon)>0 \ \forall x \in D :\ \rho^{m}(x,a) < \delta
+	\Rightarrow \rho^{k}(f(x), f(a)) < \varepsilon
+	$$
+\subsection{Непрерывность на множестве}
+	$f$ - непрерывна на некотором множестве $X$, если $f$ - непрерывна в каждой точке множества $X$
+	
+\subsection{Непрерывность в изолированной точке}	
+	 Всякая функция непрерывна в каждой изолированной точке множества своего определения.
+	
