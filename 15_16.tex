@@ -1,0 +1,135 @@
+\newcommand\R{\ensuremath{\mathbb{R}}}
+\newcommand{\rom}[1]
+    {\MakeUppercase{\romannumeral #1}}
+\newtheorem{theorem}{Теорема}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Определение}[section]
+\newpage
+\section{Теоремы Вейерштрасса}
+    
+\begin{theorem}[\rom{1} теорема Вейерштрасса]
+    Функция, непрерывная на компакте(замкнутое ограниченное множество), ограничена.
+\end{theorem}
+
+\begin{proof}
+    $f$ определена на компакте $D \subset \R^m$. Проведем доказательство для числового случая, затем обобщим на $m$-мерное пространство.
+    \[
+        f:\; D \rightarrow \R^1
+    \]
+    О/п: $f$ - неограничена: $\forall C > 0 \quad \exists x \in D:\;|f(x)| > C$. 
+    Построим последовательность, будем брать разные $C$:
+    \[
+        C=n \quad \exists x^{(n)} \in D:\; |f(x^{(n)})| > n
+    \]
+    Из любой ограниченой последовательности можно выделить сходящуюся подпоследовательность:
+    \[
+        \{x^{(n)}\} \subset D\text{ - ограничено }\Rightarrow \exists \{ x^{(n_k)} \} \subseteq \{x^{(n)}\}:\; x^{(n_k)} \xrightarrow[k \rightarrow \infty]{} a
+    \]
+    Т.к. $D$ - замкнутое(содержит свои предельные точки), то $a \in D$. Тогда
+    \[
+        f \text{ нерерывна в } a \Rightarrow f(x^{(n_k)}) \xrightarrow[k \rightarrow \infty]{} f(a) \Rightarrow \{f(x^{(n_k)})\} \text{ - ограничена} 
+    \]
+    По построению 
+    \[
+        |f(x^{(n_k)})| > n_k  \xrightarrow[k \rightarrow \infty]{} \infty
+    \]
+    Т.е. $f$ - б.б. Получили противоречие. 
+        
+    Рассмотрим теперь не числовую функцию, а вектор-функцию.
+    Док-во аналогично, только модуль меняется на метрику.
+
+    О/п: $f$ - неограничена:
+    \begin{gather*}
+        \forall C > 0 \quad \exists x \in D:\;|f(x)| = \rho(f(x), 0) > C\\
+        C=n \quad \exists x^{(n)} \in D:\; |f(x^{(n)})| = \rho(f(x^{(n)}), 0) > n\\
+        \{x^{(n)}\} \subset D\text{ - ограничено }\Rightarrow \exists \{ x^{(n_k)} \} \subseteq \{x^{(n)}\}:\; x^{(n_k)} \xrightarrow[k \rightarrow \infty]{} a\\
+        f(x^{(n_k)}) \xrightarrow[k \rightarrow \infty]{\R^p} f(a)\\
+        |f(x^{(n_k)})| = \rho(f(x^{(n_k)}), 0) > n_k  \xrightarrow[k \rightarrow \infty]{} \infty
+    \end{gather*}
+
+\end{proof}
+
+\newpage
+\begin{theorem}[\rom{2} теорема Вейерштрасса]
+    Функция $f:\; D \subseteq \R^m \rightarrow \R$(только для одномерного случая, т.к нет понятия точных граней для вектор-функции), 
+    непрерывная на компакте(замкнутое ограниченное множество), достигает своих точных граней, т.е
+    \[\exists a, b \in D:\; f(a)=\sup_{x\in D}{f(x)} =M , f(b)=\inf_{x\in D}{f(x)}=m \]
+\end{theorem}
+
+\begin{proof}
+    Функция ограничена(по первой теореме) $\Rightarrow$ имеет точную верхную грань: 
+    \[\exists M = \sup_{x\in D}{f(x)}\]
+    \begin{enumerate}
+        \item $\forall x \in D\; f(x) \leqslant M$
+        \item $\forall \varepsilon > 0\; \exists x^{(\varepsilon)} \in D:\; f(\varepsilon) > M - \varepsilon$
+    \end{enumerate}
+    Построим последовательность по 2 пункту:
+    \[
+        \varepsilon_n > 0, \varepsilon_n \rightarrow 0 \quad \exists x^{(n)} \in D:\; M-\varepsilon_n < f(x^{(n)}) \leqslant M
+    \]
+    Последовательность лежит в ограниченом множестве $\Rightarrow$ она ограничена $\Rightarrow$ 
+        существует сходящаяся подпоследовательность, выделим ее. 
+    \[
+        \exists \{x^{(n_k)}\} \subseteq \{x^{(n)}\}:\; x^{(n_k)} \xrightarrow[k \rightarrow \infty]{} a
+    \]
+    Т.к. $D$ - замкнутое(содержит свои предельные точки), то $a \in D$(как в предыдущей теореме). Тогда
+    \[
+        f \text{ нерерывна в } a \Rightarrow f(x^{(n_k)}) \xrightarrow[k \rightarrow \infty]{} f(a)
+    \]
+    С другой стороны:
+    \begin{gather*}
+        \varepsilon_{n_k} > 0, \varepsilon_{n_k} \rightarrow 0 \quad \exists x^{(n_k)} \in D:\; M-\varepsilon_{n_k} < f(x^{(n_k)}) \leqslant M\\
+        M-\varepsilon_{n_k} \xrightarrow[n \rightarrow \infty]{} M\\
+        M \rightarrow M\\
+        f(x^{(n_k)}) \rightarrow M
+    \end{gather*}
+    В силу единственности предела $f(a) = M =\sup{f(x)}$. Аналогично для $\inf$.
+\end{proof}
+
+\newpage
+\section{Равномерная непрерывность. Теорема Кантора}
+
+\begin{definition}
+    $f:\; D \subseteq \R^m \rightarrow \R^k$. 
+
+    $f$ равномерна нерерывна на $D$, если
+    \[
+        \forall \varepsilon > 0\;\; \exists \delta(\varepsilon) > 0 \quad
+        \forall x, y \in D \quad \rho_m(x, y) < \delta(\varepsilon) \Rightarrow \rho_k(f(x), f(y)) < \varepsilon
+    \]
+\end{definition}
+
+\begin{theorem}[Теорема Кантора]
+    Если $f$ непрерывна на компакте $D$, то она равномерно непрерывна на $D$.
+\end{theorem}
+
+\begin{proof}
+    Аналогично числовому случаю.
+
+    О/п:
+    \[
+        \forall \varepsilon > 0\;\; \exists \delta(\varepsilon) > 0 \quad
+        \exists x, y \in D \quad \rho_m(x, y) < \delta(\varepsilon) \Rightarrow \rho_k(f(x), f(y)) \geqslant \varepsilon
+    \]
+     Возьмем $0 < \delta_n  \xrightarrow[n \rightarrow \infty]{} 0$
+    \[
+        \forall \varepsilon > 0\;\; \exists \delta(\varepsilon) > 0 \quad
+        \exists x^{(n)}, y^{(n)} \in D \quad \rho_m(x^{(n)}, y^{(n)}) < \delta(\varepsilon) \Rightarrow \rho_k(f(x^{(n)}), f(y^{(n)})) \geqslant \varepsilon
+    \]
+    $\{x^{(n)}\}$ ограниченная, можно выделить сходящуюся подпоследовательность. Ее предел лежит в множестве, т.к. оно замкнутое:
+    \[
+        \exists \{x^{(n_p)}\} \in \{x^{(n)}\}: \quad x^{n_p} \xrightarrow[p \rightarrow \infty]{} a \in D
+    \]
+    Сделаем то же для $\{y^{(n)}\}$: 
+    \[
+        \exists \{y^{(n_p)}\} \in \{y^{(n)}\}: \quad y^{n_p} \xrightarrow[p \rightarrow \infty]{} a \in D
+    \]
+    Будет сходится так же к $a$, так как по построению
+    $\rho_m(x^{(n_p)}, y^{(n_p)}) < \delta_{n_p}$, т.е. расстояние стремится к 0, образы стремятся к одной точке.
+    В силу непрерывности функции:
+    \begin{gather*}
+        f(x^{(n_p)}) \rightarrow f(a)\\
+        f(y^{(n_p)}) \rightarrow f(a)
+    \end{gather*}    
+    Тогда $\rho(f(x^{(n_p)}), f(y^{(n_p)})) \rightarrow 0$, но по построению $\rho(f(x^{(n)}), f(y^{(n)})) \geqslant \varepsilon$. Получили противоречие.
+\end{proof}
