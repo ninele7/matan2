@@ -1,0 +1,111 @@
+\documentclass[a4paper,14pt]{article}
+ 
+%Russian-specific packages
+%--------------------------------------
+\usepackage{cmap}					
+\usepackage[english,russian]{babel}
+%--------------------------------------
+ 
+%Hyphenation rules
+%--------------------------------------
+\usepackage{hyphenat}
+%--------------------------------------
+
+%Math
+%--------------------------------------
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+%-------------------------------------- 
+
+%Hyperlinks
+%--------------------------------------
+\usepackage[svgnames]{xcolor}
+\usepackage[colorlinks=true, linkcolor=Blue, urlcolor=Blue]{hyperref}
+%--------------------------------------
+\usepackage[14pt]{extsizes}
+
+\linespread{1.15}
+
+\pagestyle{empty}
+
+\newtheorem{theorem}{Теорема}
+\newtheorem{definition}{Определение}
+
+\begin{document}
+
+    \section{Понятие производной скалярной функции по направлению. Вектор градиент, его свойства.}
+
+    Рассмотрим функцию $u(x, y, z)$ в точке $М(x,y,z)$ и точке $М_1(x+D_x,y+D_y,z+D_z)$. 
+    Проведем через точки $М$ и $М_1$ вектор. Углы наклона этого вектора к направлению координатных осей $х$, $у$, $z$ обозначим соответственно $\alpha$, $\beta$, $\gamma$. 
+    Косинусы этих углов называются \textit{направляющими косинусами} вектора.
+    Расстояние между точками $М$ и $М_1$ на векторе обозначим $DS$.
+
+    $$\Delta{S}=\sqrt{\Delta{x^2}+\Delta{y^2}+\Delta{z^2}}$$
+
+    Далее предположим, что функция $u(x,y,z)$ непрерывна и имеет непрерывные частные производные по переменным $х$, $у$ и $z$. 
+    Тогда правомерно записать следующее выражение:
+
+    $$\triangle{u}=\frac{\delta{u}}{\delta{x}}\Delta{x}+\frac{\delta{u}}{\delta{y}}\Delta{y}+\frac{\delta{u}}{\delta{z}}\Delta{z}+\varepsilon_1\Delta{x}+\varepsilon_2\Delta{y}+\varepsilon_3\Delta{z}$$
+
+    где величины $\varepsilon_1,\varepsilon_2,\varepsilon_3$ - бесконечно малые при $\Delta{S}\rightarrow{0}$.
+
+    Из геометрических соображений очевидно:
+
+    $$\frac{\Delta{x}}{\Delta{S}}=\cos{\alpha}\;\;\;\;\frac{\Delta{y}}{\Delta{S}}=\cos{\beta}\;\;\;\;\frac{\Delta{z}}{\Delta{S}}=\cos{\gamma}$$
+
+    Таким образом, приведенные выше равенства могут быть представлены следующим образом:
+
+    $$\frac{\Delta{u}}{\Delta{S}}=\frac{\delta{u}}{\delta{x}}\cos{\alpha}+\frac{\delta{u}}{\delta{y}}\cos{\beta}+\frac{\delta{u}}{\delta{z}}\cos{\gamma}+\varepsilon_1\cos{\alpha}+\varepsilon_2\cos{\beta}+\varepsilon_3\cos{\gamma}$$
+
+    $$\frac{\delta{u}}{\delta{s}}=\lim_{\Delta{S}\to{0}}\frac{\Delta{u}}{\Delta{S}}=\frac{\delta{u}}{\delta{x}}\cos{\alpha}+\frac{\delta{u}}{\delta{y}}\cos{\beta}+\frac{\delta{u}}{\delta{z}}\cos{\gamma}$$
+
+    Заметим, что величина $s$ является скалярной. Она лишь определяет направление вектора $\vec{S}$.
+
+    Из этого уравнения следует следующее определение:
+
+    \begin{definition}
+        Предел $\lim_{\Delta{S}\to{0}}\frac{\Delta{u}}{\Delta{S}}$ называется \textit{производной функции $u(x,y,z)$ по направлению вектора} 
+        в точке $\vec{S}$ с координатами $(x,y,z)$.
+    \end{definition}
+
+    \begin{definition}
+        Если в некоторой области $D$ задана функция $u=u(x,y,z)$ и некоторый вектор, 
+        проекции которого на координатные оси равны значениям функции $u$ в соответствующей точке $\frac{\delta{u}}{\delta{x}}$; $\frac{\delta{u}}{\delta{y}}$; $\frac{\delta{u}}{\delta{z}}$
+        то этот вектор называется \textit{градиентом функции $u$}.
+    \end{definition}
+
+    $$grad\;u=\frac{\delta{u}}{\delta{x}}\vec{i}+\frac{\delta{u}}{\delta{y}}\vec{j}+\frac{\delta{u}}{\delta{z}}\vec{k}$$
+
+    \subsection{Свойства:}
+
+    1. Производная функции $u=u(x,y,z)$ по направлению вектора $\vec{S}$ достигает своего наибольшего значения, если направление вектора $\vec{S}$ 
+    совпадает с направлением градиента этой функции.
+
+    $\;$
+
+    Действительно, производную данной функции по направлению вектора $\vec{S}$ можно записать следующим образом 
+    $\frac{\delta{u}}{\delta{S}}=(grad\;u\cdot\vec{e_S})=\vert{grad\;u}\vert\cdot\vert\vec{e_S}\vert\cdot\cos{\phi}$, где $\phi$ - угол между градиентом и вектором $\vec{S}$. 
+    Если этот угол равен нулю $\phi=0$, то косинус этого угла и производная функции принимают наибольшие значения, $\cos{0}=1$, $\frac{\delta{u}}{\delta{S}}=\vert{grad\;u}\vert\cdot\vert\vec{e_S}\vert\cdot\cos{0}$.
+
+    $\;$
+
+    2. Производная функции $u=u(x,y,z)$ по направлению вектора $\vec{S}$ равняется нулю, если направление вектора $\vec{S}$ перпендикулярно направлению градиента этой функции.
+    Действительно, $\frac{\delta{u}}{\delta{S}}=\vert{grad\;u}\vert\cdot\vert\vec{e_S}\vert\cdot\cos{90^\circ}=0$.
+    Данные свойства используются при решении задач оптимизации (нахождения наибольшего, наименьшего значений функций) с помощью численных методов. 
+    Градиент функции определяет направление наибольшего изменения функции. 
+    Направление перпендикулярное градиенту определяет направление, в котором функция не изменяется.
+
+    $\;$
+
+    Известно, что на поверхности уровня $u(x,y,z)=c$ функция $u=u(x,y,z)$ не изменяется. 
+    Следовательно, градиент функции перпендикулярен поверхности уровня. 
+    Это обстоятельство можно использовать для написания уравнения касательной плоскости к поверхности $u(x,y,z)=c$. 
+    Пусть точка $M_0(x_0,y_0,z_0)$ принадлежит поверхности. 
+    Найдем градиент функции $u=u(x,y,z)$ в этой точке $grad\;u\vert{M_0(x_0,y_0,z_0)}=(\frac{\delta{u}}{\delta{x}}\vert{M_0,})$и напишем уравнение плоскости, 
+    проходящей через точку $M_0$ перпендикулярно вектору $\vec{grad\;u}\vert{M_0}$. Получаем уравнение касательной плоскости 
+    $\frac{\delta{u}}{\delta{x}}\vert{M_0}(x-x_0)+\frac{\delta{u}}{\delta{y}}\vert{M_0}(y-y_0)+\frac{\delta{u}}{\delta{z}}\vert{M_0}(z-z_0)=0$.
+
+\end{document}
