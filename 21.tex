@@ -1,0 +1,110 @@
+\section{Производная сложной функции нескольких переменных}
+
+\begin{theorem}[\rom{1}]
+    $z=f(x,y), x=x(t), y=y(t)$
+    \newline $z=f(x(t), y(t))$ - сложная функция независимой переменной $t$.
+\end{theorem}
+
+    Пусть $z_{x}^{'}$, $z_{y}^{'}$ - существуют и непрерывны (т.е $z=f(x,y)$ дифференциируема) и существуют $x_{t}^{'}$, $y_{t}^{'}$.
+    
+    Дадим переменной $t$ приращение $\Delta{t}$ при этом:
+    \begin{tabular}{c|c}
+        $x$ & $\Delta{x}$ \\
+        $y$ & $\Delta{y}$ \\
+        $z$ & $\Delta{z}$
+    \end{tabular}
+    
+    Полное приращение можно представить как: 
+    \begin{equation*}
+        \Delta{z} = z_{x}^{'} * \Delta{x} + z_{y}^{'} * \Delta{y} + \delta{}_{1} * \Delta{x} + \delta{}_{2} * \Delta{y}
+    \end{equation*}
+    
+    где $\delta{}_{1} \longrightarrow 0$, $\delta{}_{2} \longrightarrow 0$ при $\Delta{x} \longrightarrow 0$, $\Delta{y} \longrightarrow 0$
+    
+    \begin{equation}
+        \frac{\Delta{z}}{\Delta{t}} = z_{x}^{'} * \frac{\Delta{x}}{\Delta{t}} + z_{y}^{'} * \frac{\Delta{y}}{\Delta{t}} + \delta{}_{1} * \frac{\Delta{x}}{\Delta{t}} + \delta{}_{2} * \frac{\Delta{y}}{\Delta{t}}
+    \end{equation}
+    
+    при $t \longrightarrow 0$, т.к. $\Delta{x}$ и $\Delta{y}$ непрерывные, то $\Delta{x} \longrightarrow 0$, $\Delta{y} \longrightarrow 0$ $\Rightarrow$ $\delta{}_{1} \longrightarrow 0$, $\delta{}_{2} \longrightarrow 0$
+    
+    \begin{equation*}
+        \lim_{\Delta{t}\to 0} \frac{\Delta{z}}{\Delta{t}} = z_{x}^{'} * \lim_{\Delta{t}\to 0} \frac{\Delta{x}}{\Delta{t}} + z_{y}^{'} * \lim_{\Delta{t}\to 0} \frac{\Delta{y}}{\Delta{t}} + \lim_{\Delta{t}\to 0} \delta{}_{1} * \frac{\Delta{x}}{\Delta{t}} + \lim_{\Delta{t}\to 0} \delta{}_{2} * \frac{\Delta{y}}{\Delta{t}}
+    \end{equation*}
+    
+    Получаем формулу:
+    \begin{equation}
+        z_{t}^{'} = z_{x}^{'} * x_{t}^{'} + z_{y}^{'} * y_{t}^{'}
+    \end{equation}
+    
+    или используя иную запись:
+    \begin{equation}
+        \frac{dz}{dt} = \frac{\delta{z}}{\delta{x}} * \frac{dx}{dt} + \frac{\delta{z}}{\delta{y}} * \frac{dy}{dt} 
+    \end{equation}
+    
+\begin{theorem}[\rom{2}]
+    $z=f(x,y), x=x(u,v), y=y(u,v)$
+    \newline $z=f(x(u,v),y(u,v))$ - функция зависит от функций двух переменных $u$ и $v$.
+\end{theorem}
+
+    Пусть $z=f(x,y), x=x(u,v), y=y(u,v)$ - имеют непрерывные частные производные по всем своим аргументам.
+    
+    \begin{equation*}
+        \frac{\delta{z}}{\delta{u}}, \frac{\delta{z}}{\delta{v}} - ? 
+    \end{equation*}
+    
+    Зафиксируем переменную $v$, а переменной $u$ придадим приращение $\Delta{u}$
+    
+    Тогда, $x$ - $\Delta{}_{u}x$, $y$ - $\Delta{}_{u}y$, $z$ - $\Delta{z}$.\\
+    
+    Запишем формулу полного приращения $z$. Мы можем так поступить, потому что $z$ имеет частные производные $\longrightarrow$ дифференциируема.
+    \begin{equation}
+        \Delta{z} = z_{x}^{'} * \Delta_{u}x * z_{y}^{'} * \Delta_{y}y + \delta_{1} * \Delta_{u}x + \delta_{2} * \Delta_{u}y
+    \end{equation}
+    при $\Delta_{u}x$, $\Delta_{u}y$ $\longrightarrow 0$
+
+    \begin{equation*}
+        \frac{\Delta{z}}{\Delta{u}} = z_{x}^{'} * \frac{\Delta_{u}x}{\Delta{u}} + z_{y}^{'} * \frac{\Delta_{u}y}{\Delta{u}} + \delta_{1} * \frac{\Delta_{u}x}{\Delta{u}} + \delta_{2} * \frac{\Delta_{u}y}{\Delta{u}}
+    \end{equation*}
+    Функции непрерывны, значит при $\Delta{u} \longrightarrow 0$: $\Delta_{u}x \longrightarrow 0$, $\Delta_{u}y \longrightarrow 0$.\\
+    $\delta_{1}$, $\delta_{2} \longrightarrow 0$ одновременно с $\Delta_{u}x$, $\Delta_{u}y \longrightarrow 0$. Значит, при $\Delta{u} \longrightarrow 0$: $\delta_{1}$, $\delta_{2} \longrightarrow 0$.
+    
+    \begin{equation*}
+        \lim_{\Delta{u}\to 0}\frac{\Delta{z}}{\Delta{u}} = z_{x}^{'} * \lim_{\Delta{u}\to 0}\frac{\Delta_{u}x}{\Delta{u}} + z_{y}^{'} * \lim_{\Delta{u}\to 0}\frac{\Delta_{u}y}{\Delta{u}} + \lim_{\Delta{u}\to 0}\delta_{1} * \frac{\Delta_{u}x}{\Delta{u}} + \lim_{\Delta{u}\to 0}\delta_{2} * \frac{\Delta_{u}y}{\Delta{u}}
+    \end{equation*}
+    
+    Каждый из полученных пределов является частичной производной
+    \begin{equation}
+        z_{u}^{'} = z_{x}^{'} * x_{u}^{'} + z_{y}^{'} * y_{u}^{'}
+    \end{equation}
+    или используя иную запись:
+    \begin{equation*}
+        \frac{\delta{z}}{\delta{u}} = \frac{\delta{z}}{\delta{x}} * \frac{\delta{x}}{\delta{u}} + \frac{\delta{z}}{\delta{y}} * \frac{\delta{y}}{\delta{u}} 
+    \end{equation*}
+    Аналогично при фиксации $u$ и приращении $v$.
+    \begin{equation*}
+        z_{v}^{'} = z_{x}^{'} * x_{v}^{'} + z_{y}^{'} * y_{v}^{'}
+    \end{equation*}
+    или используя иную запись:
+    \begin{equation*}
+        \frac{\delta{z}}{\delta{v}} = \frac{\delta{z}}{\delta{x}} * \frac{\delta{x}}{\delta{v}} + \frac{\delta{z}}{\delta{y}} * \frac{\delta{y}}{\delta{v}} 
+    \end{equation*}
+    
+\begin{definition}[\rom{1}]
+     Формула Лейбница-Бернулли дифференциирования степенно-показательной функции $y=u(x)^{v(x)}$.
+\end{definition}
+
+    Функция $y=u^{v}$, где $u=u(x), v=v(x)$.
+    $y=f(u,v)=f(u(x),v(x))=y(x)$
+    
+    Расспишем производную функции нескольких переменных:
+    \begin{equation}
+        \frac{dy}{dx} = \frac{\delta{y}}{\delta{u}} * \frac{du}{dx} + \frac{\delta{y}}{\delta{v}} * \frac{dv}{dx}
+    \end{equation}
+    
+    Функция $y=u^{v}, v=const$. Тогда находим $\frac{\delta{y}}{\delta{u}}$ как производную степенной функции $v*u^{v-1}$.
+    
+    Функция $y=u^{v}, u=const$. Тогда находим $\frac{\delta{y}}{\delta{v}}$ как производную показательной функции $u^{v}*\ln{u}$.
+    Получаем:
+    \begin{equation}
+       \frac{dv}{dx} = v*u^{v-1} * u_{x}^{'} + u^{v}*\ln{u} * v_{x}^{'}
+    \end{equation}
