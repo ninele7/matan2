@@ -1,0 +1,93 @@
+\section{18. Дифференцируемость вектор-функции многихпеременных}
+\subsection{Частные производные}
+
+Пусть векторная функция нескольких переменных
+\(f: \mathbb{R}^{n} \rightarrow \mathbb{R}^{m}\) определена в \(\delta\)
+- окрестности \(\mathrm{U}(a, \delta)\) точки \(a \in \mathbb{R}^{n} .\)
+Обозначим через \(\Delta x_{i}\) такое приращение независимого
+переменного \(x_{i}\) в точке \(a,\) при котором точка
+\(a=\left(a_{1}, \ldots, a_{i-1}, a_{i}+\Delta x_{i}, a_{i+1}, \ldots, a_{n}\right)\)
+принадлежит \(\mathrm{U}(a, \delta)\) Для этого достаточно, чтобы
+выполнялось неравенство \(\left|\Delta x_{i}\right|<\delta .\) Тогда
+определена разность значений функции \(f,\) соответствующая приращению
+\(\Delta x_{i}\)
+
+\[\Delta_{i} f\left(a, \Delta x_{i}\right)=f\left(a_{1}, \ldots, a_{i-1}, a_{i}+\Delta x_{i}, a_{i+1}, \ldots, a_{n}\right)-f\left(a_{1}, \ldots, a_{n}\right)\]
+
+Эту разность называют \textbf{частным преращением функции нескольких
+переменных} \(f\) в точке \(a\) по независимому переменному \(x_{i} .\)
+Частное приращение обозначают также через \(\Delta_{i} f(a)\) или
+\(\Delta_{x_{i}} f(a)\)
+
+\subsubsection{Определение частной производной векторной функции нескольких переменных}
+
+Если для функции нескольких переменных
+\(f: \mathbb{R}^{n} \rightarrow \mathbb{R}^{m},\) определенной в
+окрестности точки \(a,\) существует предел
+
+\[\lim _{\Delta x_{i} \rightarrow 0} \frac{\Delta_{i} f(a)}{\Delta x_{i}}\]
+
+отношения частного прирашения функции по переменному \(x_{i}\) к
+приращению \(\Delta x_{i}\) этого же переменного при
+\(\Delta x_{i} \rightarrow 0,\) то этот предел называют \textbf{частной
+производной функции нескольких перменных} \(f\) в точке \(a\) по
+переменному \(x_{i}\) и обозначают \(f_{x_{i}^{\prime}}^{\prime}\)
+
+Тогда:
+
+\[ f_{x_{i}^{\prime}}^{\prime}=\lim _{\Delta x_{i} \rightarrow 0} \frac{\Delta_{i} f(a)}{\Delta x_{i}}\]
+
+\subsubsection{Теорема}
+
+Для того чтобы векторная функция
+\(f: \mathrm{U}(a, \delta) \subset \mathbb{R}^{n} \rightarrow \mathbb{R}^{m}\)
+имела частную производную в точке \(a\) по переменному \(x_{i},\)
+необходимо и достаточно, чтобы все ее координатные функции имели частную
+производную в точке \(a\) по тому же переменному \(x_{i}\).
+
+Пусть \(\Delta x_{i}-\) приращение независимого переменного \(x_{i}\) в
+точке \(a .\) Тогда соответствуюшее прирашение функции \(f\) в точке
+\(a\) можно записать в виде:
+
+\[\begin{array}{c}
+\Delta_{i} f(a)=\left(\begin{array}{c}
+f_{1}\left(a_{1}, \ldots, a_{i-1}, a_{i}+\Delta x_{i}, a_{i+1}, \ldots, a_{n}\right) \\
+\vdots \\
+f_{m}\left(a_{1}, \ldots, a_{i-1}, a_{i}+\Delta x_{i}, a_{i+1}, \ldots, a_{n}\right)
+\end{array}\right)-\left(\begin{array}{c}
+f_{1}(a) \\
+\vdots \\
+f_{m}(a)
+\end{array}\right)= \\
+=\left(\begin{array}{c}
+f_{1}\left(a_{1}, \ldots, a_{i-1}, a_{i}+\Delta x_{i}, a_{i+1}, \ldots, a_{n}\right)-f_{1}(a) \\
+\vdots \\
+f_{m}\left(a_{1}, \ldots, a_{i-1}, a_{i}+\Delta x_{i}, a_{i+1}, \ldots, a_{n}\right)-f_{m}(a)
+\end{array}\right)=\left(\begin{array}{c}
+\Delta_{i} f_{1}(a) \\
+\vdots \\
+\Delta_{i} f_{m}(a)
+\end{array}\right)
+\end{array}\]
+
+Основываясь на определении \textbf{частной производной}:
+
+\[\frac{\partial f(a)}{\partial x_{i}}=\lim _{\Delta x_{i} \rightarrow 0} \frac{\Delta_{i} f(a)}{\Delta x_{i}}=\lim _{\Delta x_{i} \rightarrow 0}\left(\begin{array}{c}
+\frac{\Delta_{i} f_{1}(a)}{\Delta x_{i}} \\
+\vdots \\
+\frac{\Delta_{i} f_{m}(a)}{\Delta x_{i}}
+\end{array}\right)\]
+
+Проеобразуем:
+
+\[\frac{\partial f(a)}{\partial x_{i}}=\left(\begin{array}{c}
+\lim _{\Delta x_{i} \rightarrow 0} \frac{\Delta_{i} f_{1}(a)}{\Delta x_{i}} \\
+\vdots \\
+\lim _{\Delta x_{i} \rightarrow 0} \frac{\Delta_{i} f_{m}(a)}{\Delta x_{i}}
+\end{array}\right)=\left(\begin{array}{c}
+\frac{\partial f_{1}(a)}{\partial x_{i}} \\
+\vdots \\
+\frac{\partial f_{m}(a)}{\partial x_{i}}
+\end{array}\right)\]
+
+Доказано.
