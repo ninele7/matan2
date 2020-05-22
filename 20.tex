@@ -1,84 +1,45 @@
-\documentclass[a4paper,14pt]{article}
- 
-%Russian-specific packages
-%--------------------------------------
-\usepackage{cmap}					
-\usepackage[english,russian]{babel}
-%--------------------------------------
- 
-%Hyphenation rules
-%--------------------------------------
-\usepackage{hyphenat}
-%--------------------------------------
+\section{Необходимые условия дифференцируемости. Достаточные условия дифференцируемости.}
 
-%Math
-%--------------------------------------
-\usepackage{mathtools}
-\usepackage{mathrsfs}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
-%-------------------------------------- 
+Рассмотрим полное приращение функции $f(x,y)$ в точке $(x_0,y_0)$:
 
-%Hyperlinks
-%--------------------------------------
-\usepackage[svgnames]{xcolor}
-\usepackage[colorlinks=true, linkcolor=Blue, urlcolor=Blue]{hyperref}
-%--------------------------------------
-\usepackage[14pt]{extsizes}
+$$\Delta{f(x_0,y_0)}=f(x_0+\Delta{x},y_0+\Delta{y})-f(x_0,y_0)$$
 
-\linespread{1.15}
+\begin{definition}
+    Функция $f(x,y)$ называется \textit{дифференцируемой} в точке $(x_0,y_0)$, если существуют числа $A$ и $B$
+    такие, что её полное приращение в этой точке представимо в виде
+\end{definition}
 
-\pagestyle{empty}
+$$\Delta{f(x_0,y_0)}=A\Delta{x}+B\Delta{y}+o(\rho),$$
 
-\newtheorem{theorem}{Теорема}
-\newtheorem{definition}{Определение}
+где $\rho=\sqrt{\Delta{x^2}+\Delta{y^2}}\to{0}$ при $(\Delta{x},\Delta{y})\to(0,0)$.
 
-\begin{document}
+\begin{theorem}
+    Если Функция $f(x,y)$ дифференцируема в точке $(x_0,y_0)$, то она имеет в этой точке частные производные по каждому аргументу $x,y$.
+    При этом $\frac{\delta{f}}{\delta{x}}(x_0,y_0)=A$, $\frac{\delta{f}}{\delta{y}}(x_0,y_0)=B$,
+    где $A$ и $B$ - числа из равенства выше.
+\end{theorem}
 
-    \section{Необходимые условия дифференцируемости. Достаточные условия дифференцируемости.}
+\textit{Доказательство.}
+В определении дифференцируемости положим $\Delta{y}=0$, a $\Delta{x}\neq{0}$ и получим
 
-    Рассмотрим полное приращение функции $f(x,y)$ в точке $(x_0,y_0)$:
+$$f(x_0+\Delta{x},y_0)-f(x_0,y_0)=A\Delta{x}+o(\Delta{x}).$$
 
-    $$\Delta{f(x_0,y_0)}=f(x_0+\Delta{x},y_0+\Delta{y})-f(x_0,y_0)$$
+Поделим на $\Delta{x}$ и посчитаем предел
 
-    \begin{definition}
-        Функция $f(x,y)$ называется \textit{дифференцируемой} в точке $(x_0,y_0)$, если существуют числа $A$ и $B$
-        такие, что её полное приращение в этой точке представимо в виде
-    \end{definition}
+$$\lim_{\Delta{x}\to{0}}\frac{f(x_0+\Delta{x},y_0)-f(x_0,y_0)}{\Delta{x}}=\lim_{\Delta{x}\to{0}}A+\frac{o(\Delta{x})}{\Delta{x}}=A,$$
 
-    $$\Delta{f(x_0,y_0)}=A\Delta{x}+B\Delta{y}+o(\rho),$$
+т. е. существует $\frac{\delta{f}}{\delta{x}}(x_0,y_0)$  она равна $A$.
 
-    где $\rho=\sqrt{\Delta{x^2}+\Delta{y^2}}\to{0}$ при $(\Delta{x},\Delta{y})\to(0,0)$.
+Учитывая доказанное свойство, условие дифференцируемости функции можно записать в виде
 
-    \begin{theorem}
-        Если Функция $f(x,y)$ дифференцируема в точке $(x_0,y_0)$, то она имеет в этой точке частные производные по каждому аргументу $x,y$.
-        При этом $\frac{\delta{f}}{\delta{x}}(x_0,y_0)=A$, $\frac{\delta{f}}{\delta{y}}(x_0,y_0)=B$,
-        где $A$ и $B$ - числа из равенства выше.
-    \end{theorem}
+$$\Delta{f(x_0,y_0)}=\frac{\delta{f}}{\delta{x}}(x_0,y_0)\Delta{x}+\frac{\delta{f}}{\delta{y}}(x_0,y_0)\Delta{y}+o(\sqrt{\Delta{x^2}+\Delta{y^2}}).$$
 
-    \textit{Доказательство.}
-    В определении дифференцируемости положим $\Delta{y}=0$, a $\Delta{x}\neq{0}$ и получим
+Часто бывает удобна следующая (эквивалентная) форма определения дифференцируемости.
 
-    $$f(x_0+\Delta{x},y_0)-f(x_0,y_0)=A\Delta{x}+o(\Delta{x}).$$
+\begin{definition}
+    Функция $f(x,y)$ называется \textit{дифференцируемой} в точке $(x_0,y_0)$, если её полное приращение в этой точке представимо в виде
+\end{definition}
 
-    Поделим на $\Delta{x}$ и посчитаем предел
+$$\Delta{f(x_0,y_0)}=\frac{\delta{f}}{\delta{x}}(x_0,y_0)\Delta{x}+\frac{\delta{f}}{\delta{y}}(x_0,y_0)\Delta{y}+\alpha\cdot\Delta{x}+\beta\cdot\Delta{y},$$
 
-    $$\lim_{\Delta{x}\to{0}}\frac{f(x_0+\Delta{x},y_0)-f(x_0,y_0)}{\Delta{x}}=\lim_{\Delta{x}\to{0}}A+\frac{o(\Delta{x})}{\Delta{x}}=A,$$
-
-    т. е. существует $\frac{\delta{f}}{\delta{x}}(x_0,y_0)$  она равна $A$.
-
-    Учитывая доказанное свойство, условие дифференцируемости функции можно записать в виде
-
-    $$\Delta{f(x_0,y_0)}=\frac{\delta{f}}{\delta{x}}(x_0,y_0)\Delta{x}+\frac{\delta{f}}{\delta{y}}(x_0,y_0)\Delta{y}+o(\sqrt{\Delta{x^2}+\Delta{y^2}}).$$
-
-    Часто бывает удобна следующая (эквивалентная) форма определения дифференцируемости.
-
-    \begin{definition}
-        Функция $f(x,y)$ называется \textit{дифференцируемой} в точке $(x_0,y_0)$, если её полное приращение в этой точке представимо в виде
-    \end{definition}
-
-    $$\Delta{f(x_0,y_0)}=\frac{\delta{f}}{\delta{x}}(x_0,y_0)\Delta{x}+\frac{\delta{f}}{\delta{y}}(x_0,y_0)\Delta{y}+\alpha\cdot\Delta{x}+\beta\cdot\Delta{y},$$
-    
-    где функции $\alpha=\alpha(\Delta{x},\Delta{y})$ и $\beta=\beta(\Delta{x},\Delta{y})$ - бесконечно малые при $(\Delta{x},\Delta{y})\to(0,0)$.
-\end{document}
+где функции $\alpha=\alpha(\Delta{x},\Delta{y})$ и $\beta=\beta(\Delta{x},\Delta{y})$ - бесконечно малые при $(\Delta{x},\Delta{y})\to(0,0)$.
