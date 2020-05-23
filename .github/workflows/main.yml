@@ -8,6 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build latex
+    - uses: xu-cheng/latex-action@v2
       with:
         root_file: main.tex
     - name: Create release
