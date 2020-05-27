@@ -1,29 +1,6 @@
-\documentclass[20pt,a4paper]{extarticle}
-\usepackage[a4paper,margin=6mm]{geometry}
-\usepackage{amsmath,amsthm}
-\usepackage{indentfirst}
-\usepackage{hyperref}
-\usepackage{mdframed}
-\usepackage[russian]{babel}
-\usepackage[capitalise,nameinlink,noabbrev]{cleveref}
-\crefname{equation}{}{}
-\usepackage{amsfonts}
-\newtheorem*{theorem}{Теорема}
-\newtheorem{consequence}{Следствие}
-\newtheorem*{proof}{Доказательство}
-\newtheorem*{definition}{Определение}
-\newenvironment{ftdef}
-  {\begin{mdframed}\begin{definition}}
-  {\end{definition}\end{mdframed}}
-  
-\newtheorem{lemma}[theorem]{Lemma}
-
-
-
-\title{\LaTeX\ Необходимые условия локального экстремума функции нескольких переменных.}
+\section{28. Необходимые условия локального экстр    емума функции нескольких переменных.}
 \author{КН-101}
 
-\begin{document}
 
 \maketitle
 
@@ -100,4 +77,3 @@ $$ \lim_{t \to +0}{f(x_0 + vt)-f(x_0) \over t} = \lim_{t \to -0}{f(x_0 + vt)-f(x
 3) Касательная плоскость к графику функции $z = f(x)$ в точке $(x_0*,f(x_0)) \in \mathbb{R}^{n+1}$ имеет следующее уравнение: $z = f(x_0)$, где $x_0*$ -- координаты точки $x_0$ в стандартном базисе. То есть, в случае когда $f: \mathbb{R}^n \to \mathbb{R}$, такая касательная плоскость лежит горизонтально.
 \end{consequence}
 
-\end{document}
