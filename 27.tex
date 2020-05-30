@@ -1,0 +1,114 @@
+\documentclass{article}
+
+%Russian-specific packages
+%--------------------------------------
+\usepackage[russian]{babel}
+%--------------------------------------
+
+%Hyphenation rules
+%--------------------------------------
+\usepackage{hyphenat}
+%--------------------------------------
+
+%Math
+%--------------------------------------
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{accents}
+\usepackage{systeme}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\sign}{sign}
+\newcommand\aug{\fboxsep=-\fboxrule\!\!\!\fbox{\strut}\!\!\!}
+%-------------------------------------- 
+
+%Hyperlinks
+%--------------------------------------
+\usepackage[svgnames]{xcolor}
+\usepackage[colorlinks=true, linkcolor=Blue, urlcolor=Blue]{hyperref}
+%--------------------------------------
+
+%Graphics
+%--------------------------------------
+\usepackage{graphicx}
+\usepackage{wrapfig}
+%--------------------------------------
+
+%errors fix
+%--------------------------------------
+\usepackage{microtype}
+\usepackage[a4paper,left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{verbatim}
+%--------------------------------------
+\begin{document}
+
+\section{Формула Тейлора для функций многих переменных.}
+
+Формулы Тейлора и Маклорена. Если функция  $z=f(x,y)$ имеет в некоторой окрестности точки
+$(x_0,y_0)$ непрерывные частные производные до (n+1)-го порядка включительно, то для любой точки $(x,y)$ из этой окрестности справедлива формула Тейлора n-го порядка:
+
+$f(x,y)= f(x_\textup{0},y_\textup{0}) + \sum\limits_{k=1}^n \frac1{\textbf{k!}} \left((x-x_0)\frac{d}{dx}+(y-y_0)\frac{d}{dy}\right)^k \; f(x_0,y_0) + \boldsymbol{o}(\rho^n)$ , где
+
+$
+\rho = \sqrt{(x-x_0)^2+(y-y_0)^2}
+$,
+
+$
+\left((x-x_0)\frac{d}{dx}+(y-y_0)\frac{d}{dy}\right)f(x_0,y_0) \equiv
+$
+
+$
+\equiv (x-x_0)\frac{df(x_0,y_0)}{dx}+(y-y_0)\frac{df(x_0,y_0)}{dy}
+$,
+
+$
+\left((x-x_0)\frac{d}{dx}+(y-y_0)\frac{d}{dy}\right)^2 f(x_0,y_0)\equiv (x-x_0)^2 \;\frac{d^2 f(x_0,y_0)}{dx^2} 
+$
+
+$
++2(x-x_0)(y-y_0)\;\frac{d^2 f(x_0,y_0)}{dxdy}+(y-y_0)^2 \;\frac{d^2f(x_0,y_0)}{dy^2}
+$
+
+и т.д. Формула Тейлора, записанная в окрестности точки (0,0) называется формулой Маклорена. Например, для функции двух переменных при n=2:
+
+$
+f(x,y)=f(0,0)+\frac{df(0,0)}{dx}x+\frac{df(0,0)}{dy}y+\frac{d^2 f(0,0)}{2dx^2}x^2+
+$
+
+$
+\frac{d^2 f(0,0)}{dxdy}xy+\frac{d^2 f(0,0)}{2dy^2}y^2+\boldsymbol{o}(\rho^2)
+$
+
+Аппроксимация функции многочленом. Выражение
+
+$
+T_n(x,y)=f(x_0,y_0)+\sum\limits_{k=1}^n \frac1{\textbf{k!}} \left((x-x_0)\frac{d}{dx}+(y-y_0)\frac{d}{dy}\right)^k f(x_0,y_0)
+$
+называется многочленом Тейлора n-го порядка. Поскольку $
+f(x,y)-T_n(x,y)=\boldsymbol{o}(\rho^n)
+$
+, то в окрестности точки функцию $
+(x_0,y_0)
+$
+можно приближенно заменить, или, как говорят, аппроксимировать, ее многочленом Тейлора, т.е.
+$
+f(x,y)\approx T_n(x,y)
+$
+. Чем ближе точка
+$
+(x,y)
+$
+к точке
+$
+(x_0,y_0)
+$
+, тем выше точность такой аппроксимации; кроме того, точность возрастает с ростом n. Это означает, что, чем больше непрерывных производных имеет функция 
+$
+z=f(x,y)
+$
+ , тем точнее представляет ее многочлен Тейлора.
+\end{document}
