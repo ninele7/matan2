@@ -1,0 +1,128 @@
+\documentclass{article}
+
+%Russian-specific packages
+%--------------------------------------
+\usepackage[russian]{babel}
+%--------------------------------------
+
+%Hyphenation rules
+%--------------------------------------
+\usepackage{hyphenat}
+%--------------------------------------
+
+%Math
+%--------------------------------------
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{accents}
+%-------------------------------------- 
+
+%Hyperlinks
+%--------------------------------------
+\usepackage[sXgnames]{xcolor}
+\usepackage[colorlinks=true, linkcolor=Blue, urlcolor=Blue]{hyperref}
+%--------------------------------------
+
+%Graphics
+%--------------------------------------
+\usepackage{graphicx}
+\usepackage{wrapfig}
+%--------------------------------------
+
+%errors fix
+%--------------------------------------
+\usepackage{microtype}
+\usepackage[a4paper,left=3cm,right=3cm,top=2.5cm,bottom=2.5cm]{geometry}
+%--------------------------------------
+
+\begin{document}
+\section{Достаточные условия равенства смешанных производных}
+Прежде чем доказывать 3 основные теоремы о достаточных условиях равенства смешанных производных введём вспомогательное  выражение: 
+$$\Phi = f(x_0 + \Delta x, y_0 + \Delta y) - f(x_0 + \Delta x, y_0) - f(x_0, y_0 + \Delta y) + f(x_0, y_0)$$
+
+Введём также функцию:
+$$
+\phi (x) = f(x, y_0 + \Delta y) -  f(x, y_0)
+$$
+Тогда:
+$$\Phi = \phi (x_0 + \Delta x) - \phi (x_0)$$
+применим теорему Лагранжа:
+$$
+\Phi = \phi^{'}(x_0 + \Theta_1\Delta x)\Delta x = [f_x^{'}(x_0 + \Theta_1\Delta x, y_0 + \Delta y) - f_x^{'}(x_0 + \Theta_1\Delta x, y_0)]\Delta x
+$$  
+по теореме Лагранжа:
+$$
+\Phi = f_{x y}^{''}(x_0 + \Theta_1\Delta x, y_0 + \Theta_2\Delta y)\Delta y \Delta x
+$$
+Проделыйваем то же самое с $y$: 
+$$
+\psi (y) = f(x_0 + \Delta x, y) -  f(x_0, y)
+$$ 
+Тогда:
+$$
+\Phi = \psi (y_0 + \Delta y) - \psi (y_0)
+$$
+Далее, дважды применяя теорему Лагранжа:
+$$
+\Phi = [f_y^{'}(x_0 + \Delta x, y_0 + \lambda_1\Delta y) - f_y^{'}(x_0, y_0+\lambda_1\Delta y)]\Delta y = f_{y x}^{''}(x_0 + \lambda_1\Delta x, y_0 + \lambda_2\Delta y)\Delta y \Delta x
+$$
+Перейдем к теоремам:
+ 
+Теорема 1: Пусть в $O(x_0, y_0)$ определены и непрерывны $f, f_{x}^{'}, f_{y}^{'}$, определены $f_{x y}^{''}, f_{y x}^{''}$. Если $f_{x y}^{''}, f_{y x}^{''}$ непрерывны в $(x_0, y_0)$, то $f_{x y}^{''}(x_0, y_0) = f_{y x}^{''}(x_0, y_0)$
+ 
+Возьмём приращения $\Delta x, \Delta y$, оставляющие нас в рамках $O(x_0, y_0)$ и поделим на них выражение $\Phi$:
+$$
+\frac{\Phi}{\Delta x \Delta y} = f_{x y}^{''}(x_0 + \Theta_1\Delta x, y_0 + \Theta_2\Delta y) \underset{\Delta x, \Delta y \to 0}{\longrightarrow} f_{x y}^{''}(x_0, y_0)
+$$
+$$
+\frac{\Phi}{\Delta x \Delta y} = f_{y x}^{''}(x_0 + \lambda_1\Delta x, y_0 + \lambda_2\Delta y) \underset{\Delta x, \Delta y \to 0}{\longrightarrow} f_{y x}^{''}(x_0, y_0)
+$$
+
+Теорема 2:  Пусть в $O(x_0, y_0)$ определены и непрерывны $f, f_{x}^{'}, f_{y}^{'}$.
+
+Пусть в $\mathring O(x_0, y_0)$ определена хотя бы одна из $f_{y x}^{''}  f_{x y}^{''} $
+
+Пусть наконец $\exists \lim_{x \to x_0, y \to y_0}{f_{x y}^{''}}$. 
+
+Тогда 
+$\exists f_{x y}^{''}(x_0, y_0), f_{y x}^{''}(x_0, y_0) \And f_{x y}^{''}(x_0, y_0) = f_{y x}^{''}(x_0, y_0)$.
+
+$$
+\lim_{\Delta x \to 0}{\frac{\Phi}{\Delta x \Delta y}} = 
+\lim_{\Delta x \to 0}{\frac{[f_x^{'}(x_0 + \Theta_1\Delta x, y_0 + \Delta y) - f_x^{'}(x_0 + \Theta_2\Delta x, y_0)]\Delta x}{\Delta x \Delta y}} = \frac{1}{\Delta y}[f_x^{'}(x_0, y_0 + \Delta y) - f_x^{'}(x_0, y_0)]
+$$ 
+(В силу непрерывности первой производной в точке $(x_0, y_0 + \Delta y)$ и $(x_0, y_0)$)
+проворачиваем аналогично с $\Delta y$: 
+$$
+\lim_{\Delta x \to 0}{\frac{\Phi}{\Delta x \Delta y}} = \lim_{\Delta y \to 0}{\frac{[f_y^{'}(x_0 + \Delta x, y_0 + \lambda_1\Delta y) - f_y^{'}(x_0, y_0 + \lambda_2\Delta y)]\Delta y}{\Delta x \Delta y}} = \frac{1}{\Delta y}[f_y^{'}(x_0 + \Delta x, y_0) - f_y^{'}(x_0, y_0)]
+$$
+
+теперь устремим $\Delta x$ и $\Delta y$ одновременно к 0 и тогда по теореме о перестановке двух повторных пределов:
+$$
+\lim_{\Delta x, \Delta y \to 0}{\frac{\Phi}{\Delta x \Delta y}} = \lim_{\Delta x, \Delta y \to 0}{f_{x y}^{''}(x_0 + \Theta_1\Delta x, y_0 + \Theta_2\Delta y}) = A = f_{x y}^{''}(x_0, y_0)
+$$
+$$
+\lim_{\Delta y \to 0}{\lim_{\Delta x \to 0}{\frac{\Phi}{\Delta x \Delta y}}} = A = f_{x y}^{''}(x_0, y_0) = \lim_{\Delta x \to 0}{\lim_{\Delta y \to 0}{\frac{\Phi}{\Delta x \Delta y}}} = f_{y x}^{''}(x_0, y_0)
+$$
+
+Дадим вспомогательное определение: Функция является дважды дифференцируемой в точке $x^0$, если все её частные производные первого порядка являются функциями дифференцируемыми в точке $x_0$
+
+Теорема 3: Пусть функция $f$ определена в $O(x_0, y_0)$ и дважды диффиренцируема в $(x_0, y_0)$. Тогда $f_{x y}^{''}(x_0, y_0) = f_{y x}^{''}(x_0, y_0)$
+
+$\Phi = [f_x^{'}(x_0 + \Theta_1\Delta x, y_0 + \Delta y) + f_{x}^{'}(x_0, y_0) - f_{x}^{'}(x_0, y_0) - f_x^{'}(x_0 + \Theta_1\Delta x, y_0)]\Delta x = [f_x^{'}(x_0 + \Theta_1\Delta x, y_0 + \Delta y) - f_{x}^{'}(x_0, y_0)]\Delta x - [f_x^{'}(x_0 + \Theta_1\Delta x, y_0) - f_{x}^{'}(x_0, y_0)]\Delta x =  [f_{x x}^{''}(x_0, y_0)\Theta_1\Delta x + f_{y y}^{''}(x_0, y_0)\Delta y + \epsilon_1\Theta_1\Delta x + \epsilon_2 \Delta y] \Delta x - [f_{x x}^{''}(x_0, y_0)\Theta_1\Delta x + \epsilon_3\Theta_1\Delta x] \Delta x = 
+f_{x y}^{''}(x_0, y_0)\Delta x\Delta y + \epsilon_1\Theta_1(\Delta x)^2 + \epsilon_2 \Delta x\Delta y - \epsilon_3\Theta_1(\Delta x)^2$
+
+$\Phi = [f_y^{'}(x_0 + \Delta x, y_0 + \lambda_1\Delta y) + f_{y}^{'}(x_0, y_0) - f_{y}^{'}(x_0, y_0) - f_y^{'}(x_0, y_0+ \lambda_2\Delta y)]\Delta y = [f_{y x}^{''}(x_0, y_0)\Delta x + f_{y y}^{''}(x_0, y_0)\lambda_1\Delta y + \delta_1\Delta x + \delta_2\lambda_1\Delta y]\Delta y - [f_{y y}^{''}(x_0, y_0)\lambda_1\Delta y+ \delta_3\lambda_1\Delta y]\Delta y = f_{y x}^{''}(x_0, y_0)\Delta x\Delta y + \delta_1\Delta x\Delta y + \delta_2\lambda_1(\Delta y)^2 - \delta_3\lambda_1(\Delta y)^2$
+
+Положим $\Delta y = \Delta x$ и тогда:
+
+$$
+\frac{\Phi}{(\Delta x)^2} = f_{x y}^{''}(x_0, y_0) + \epsilon_1\Theta_1 + \epsilon_2  - \epsilon_3\Theta_1\underset{\Delta x \to 0}{\longrightarrow} f_{x y}^{''}(x_0, y_0)
+$$ 
+
+$$
+\frac{\Phi}{(\Delta x)^2} = f_{y x}^{''}(x_0, y_0) + \delta_1 + \delta_2\lambda_1 - \delta_3\lambda_1 \underset{\Delta x \to 0}{\longrightarrow} f_{y x}^{''}(x_0, y_0)
+$$
+\end{document}
