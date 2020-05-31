@@ -1,43 +1,3 @@
-\documentclass{article}
-
-%Russian-specific packages
-%--------------------------------------
-\usepackage[russian]{babel}
-%--------------------------------------
-
-%Hyphenation rules
-%--------------------------------------
-\usepackage{hyphenat}
-%--------------------------------------
-
-%Math
-%--------------------------------------
-\usepackage{mathtools}
-\usepackage{mathrsfs}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{accents}
-%-------------------------------------- 
-
-%Hyperlinks
-%--------------------------------------
-\usepackage[sXgnames]{xcolor}
-\usepackage[colorlinks=true, linkcolor=Blue, urlcolor=Blue]{hyperref}
-%--------------------------------------
-
-%Graphics
-%--------------------------------------
-\usepackage{graphicx}
-\usepackage{wrapfig}
-%--------------------------------------
-
-%errors fix
-%--------------------------------------
-\usepackage{microtype}
-\usepackage[a4paper,left=3cm,right=3cm,top=2.5cm,bottom=2.5cm]{geometry}
-%--------------------------------------
-
-\begin{document}
 \section{Достаточные условия равенства смешанных производных}
 Прежде чем доказывать 3 основные теоремы о достаточных условиях равенства смешанных производных введём вспомогательное  выражение: 
 $$\Phi = f(x_0 + \Delta x, y_0 + \Delta y) - f(x_0 + \Delta x, y_0) - f(x_0, y_0 + \Delta y) + f(x_0, y_0)$$
@@ -125,4 +85,3 @@ $$
 $$
 \frac{\Phi}{(\Delta x)^2} = f_{y x}^{''}(x_0, y_0) + \delta_1 + \delta_2\lambda_1 - \delta_3\lambda_1 \underset{\Delta x \to 0}{\longrightarrow} f_{y x}^{''}(x_0, y_0)
 $$
-\end{document}
