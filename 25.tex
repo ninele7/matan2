@@ -71,12 +71,30 @@ $$
 
 Теорема 3: Пусть функция $f$ определена в $O(x_0, y_0)$ и дважды диффиренцируема в $(x_0, y_0)$. Тогда $f_{x y}^{''}(x_0, y_0) = f_{y x}^{''}(x_0, y_0)$
 
-$\Phi = [f_x^{'}(x_0 + \Theta_1\Delta x, y_0 + \Delta y) + f_{x}^{'}(x_0, y_0) - f_{x}^{'}(x_0, y_0) - f_x^{'}(x_0 + \Theta_1\Delta x, y_0)]\Delta x = [f_x^{'}(x_0 + \Theta_1\Delta x, y_0 + \Delta y) - f_{x}^{'}(x_0, y_0)]\Delta x - [f_x^{'}(x_0 + \Theta_1\Delta x, y_0) - f_{x}^{'}(x_0, y_0)]\Delta x =  [f_{x x}^{''}(x_0, y_0)\Theta_1\Delta x + f_{y y}^{''}(x_0, y_0)\Delta y + \epsilon_1\Theta_1\Delta x + \epsilon_2 \Delta y] \Delta x - [f_{x x}^{''}(x_0, y_0)\Theta_1\Delta x + \epsilon_3\Theta_1\Delta x] \Delta x = 
-f_{x y}^{''}(x_0, y_0)\Delta x\Delta y + \epsilon_1\Theta_1(\Delta x)^2 + \epsilon_2 \Delta x\Delta y - \epsilon_3\Theta_1(\Delta x)^2$
+$$
+\Phi = [f_x^{'}(x_0 + \Theta_1\Delta x, y_0 + \Delta y) + f_{x}^{'}(x_0, y_0) - f_{x}^{'}(x_0, y_0) - f_x^{'}(x_0 + \Theta_1\Delta x, y_0)]\Delta x
+$$
+$$
+\Phi = [f_x^{'}(x_0 + \Theta_1\Delta x, y_0 + \Delta y) - f_{x}^{'}(x_0, y_0)]\Delta x - [f_x^{'}(x_0 + \Theta_1\Delta x, y_0) - f_{x}^{'}(x_0, y_0)]\Delta x
+$$
+$$
+\Phi =  [f_{x x}^{''}(x_0, y_0)\Theta_1\Delta x + f_{y y}^{''}(x_0, y_0)\Delta y + \epsilon_1\Theta_1\Delta x + \epsilon_2 \Delta y] \Delta x - [f_{x x}^{''}(x_0, y_0)\Theta_1\Delta x + \epsilon_3\Theta_1\Delta x] \Delta x
+$$
+$$ 
+\Phi = f_{x y}^{''}(x_0, y_0)\Delta x\Delta y + \epsilon_1\Theta_1(\Delta x)^2 + \epsilon_2 \Delta x\Delta y - \epsilon_3\Theta_1(\Delta x)^2
+$$
 
-$\Phi = [f_y^{'}(x_0 + \Delta x, y_0 + \lambda_1\Delta y) + f_{y}^{'}(x_0, y_0) - f_{y}^{'}(x_0, y_0) - f_y^{'}(x_0, y_0+ \lambda_2\Delta y)]\Delta y = [f_{y x}^{''}(x_0, y_0)\Delta x + f_{y y}^{''}(x_0, y_0)\lambda_1\Delta y + \delta_1\Delta x + \delta_2\lambda_1\Delta y]\Delta y - [f_{y y}^{''}(x_0, y_0)\lambda_1\Delta y+ \delta_3\lambda_1\Delta y]\Delta y = f_{y x}^{''}(x_0, y_0)\Delta x\Delta y + \delta_1\Delta x\Delta y + \delta_2\lambda_1(\Delta y)^2 - \delta_3\lambda_1(\Delta y)^2$
+$$
+\Phi = [f_y^{'}(x_0 + \Delta x, y_0 + \lambda_1\Delta y) + f_{y}^{'}(x_0, y_0) - f_{y}^{'}(x_0, y_0) - f_y^{'}(x_0, y_0+ \lambda_2\Delta y)]\Delta y
+$$
+$$
+\Phi = [f_{y x}^{''}(x_0, y_0)\Delta x + f_{y y}^{''}(x_0, y_0)\lambda_1\Delta y + \delta_1\Delta x + \delta_2\lambda_1\Delta y]\Delta y - [f_{y y}^{''}(x_0, y_0)\lambda_1\Delta y+ \delta_3\lambda_1\Delta y]\Delta y
+$$
+$$
+\Phi = f_{y x}^{''}(x_0, y_0)\Delta x\Delta y + \delta_1\Delta x\Delta y + \delta_2\lambda_1(\Delta y)^2 - \delta_3\lambda_1(\Delta y)^2
+$$
 
-Положим $\Delta y = \Delta x$ и тогда:
+Так как подобные выкладки верны для любых $\Delta y,\Delta x$ положим $\Delta y = \Delta x$ и тогда:
 
 $$
 \frac{\Phi}{(\Delta x)^2} = f_{x y}^{''}(x_0, y_0) + \epsilon_1\Theta_1 + \epsilon_2  - \epsilon_3\Theta_1\underset{\Delta x \to 0}{\longrightarrow} f_{x y}^{''}(x_0, y_0)
