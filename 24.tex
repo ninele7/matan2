@@ -1,0 +1,36 @@
+\section{Производные второго и более высоких порядков.}
+Пусть дана функция \(f(x_1,x_2,\cdots,x_m)\), \(f\) определена на \(X \subseteq \mathbb{R}^m\),
+и данная функция имеет частную производную \(\frac{\partial f}{\partial x_i}(x_1,x_2,\cdots,x_m)\)
+в некоторой окрестности некоторой точки\\ \(M(x_1,x_2,\cdots,x_m)\).\\\\
+Обозначим частную производную как некоторую функцию:
+\begin{equation*}
+    \frac{\partial f}{\partial x_i}(x_1,x_2,\cdots,x_m) = g(x_1,x_2,\cdots,x_m)
+\end{equation*}
+Теперь дадим частное прирощение в точке \(M\) по некоторой координате \(x_k\):
+\begin{equation*}
+    M(x_1,x_2,\cdots,x_k, x_{k+1},\cdots,x_m) \to N(x_1,x_2,\cdots,x_k + \Delta x_k, x_{k+1},\cdots,x_m)
+\end{equation*}
+Сосчитаем предел:
+\begin{equation*}
+    \lim_{\substack{\Delta x_k \to 0 \\ N \to M}} \frac{g(N) - g(M)}{\Delta x_k}
+\end{equation*}
+Если такой предел существует, то он является частной производной функции \(g\) по переменной \(x_k\):
+\begin{equation*}
+    \lim_{\substack{\Delta x_k \to 0 \\ N \to M}} \frac{g(N) - g(M)}{\Delta x_k}
+    = \frac{\partial g}{\partial x_k} (M)
+    = \frac{\partial}{\partial x_k} \left( \frac{\partial f}{\partial x_i} \right) (M)
+    = \frac{\partial^2 f}{\partial x_k \partial x_i} (M)
+\end{equation*}
+Выражение \(\frac{\partial^2 f}{\partial x_k \partial x_i} (M)\) называется производной второго порядка
+функции \(f\) по переменным \(x_i, x_k\).\\\\
+В частности, если \(k = i\), то:
+\begin{equation*}
+    \frac{\partial^2 f}{\partial x_i \partial x_i} (M) = \frac{\partial^2 f}{\partial x_i^2} (M)
+\end{equation*}
+И \(\frac{\partial^2 f}{\partial x_i^2} (M)\) называется второй частной производной функции \(f\)
+по переменной \(x_i\).\\\\
+Если \(k \neq i\), то \(\frac{\partial^2 f}{\partial x_k \partial x_i} (M)\) называется смешанной производной
+второго порядка функции \(f\) по переменным \(x_i, x_k\).\\
+\begin{equation*}
+    \frac{\partial^2 f}{\partial x_k \partial x_i} = \left( f'_{x_i} \right)'_{x_k} = f''_{x_i x_k}
+\end{equation*}
