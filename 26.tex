@@ -1,0 +1,241 @@
+\section{Дифференциал второго и более порядков}
+Дифференциалом $n$-ого порядка, $n \geq 2$, функции $z=f(x_1, x_2, \dots, x_k)$ называется:
+$$d(d^{n-1}z)$$
+\subsection{Независимые переменные}
+Заметим, что если в выражении второго порядка
+$$$$
+При $n = 2$, и при условии что переменные $x_i$ независимы:
+$$d^2z = \left(
+{\partial^2z \over \partial x_1^2}d x_1 +
+{\partial^2z \over \partial x_1\partial x_2}d x_2 +
+\dots +
+{\partial^2z \over \partial x_1\partial x_k}d x_k  
+\right)d x_1 + $$
+$$ + \left(
+{\partial^2z \over \partial x_2\partial x_1}d x_1 +
+{\partial^2z \over \partial x_2^2}d x_2 +
+\dots +
+{\partial^2z \over \partial x_2\partial x_k}d x_k  
+\right)d x_2 + $$
+$$ + \left({\partial^2z \over \partial x_k\partial x_1}d x_1 +
+{\partial^2z \over \partial x_k\partial x_2}d x_2 +
+\dots +
+{\partial^2z \over \partial x_k^2}d x_k  
+\right)d x_k = $$
+$$= {\partial^2z \over \partial x_1^2}d x_1^2 +
+{\partial^2z \over \partial x_2^2}d x_2^2 +
+\dots  +
+{\partial^2z \over \partial x_k^2}d x_k^2 +  $$
+$$+ 2 {\partial^2z \over \partial x_1x_2}dx_1dx_2 + 
+2{\partial^2z \over \partial x_1x_3}dx_1dx_3 +
+\dots
+2{\partial^2z \over \partial x_1x_k}dx_1dx_k +
+\dots  +
+{\partial^2z \over \partial x_{k-1}x_k}dx_{k-1}dx_k$$
+
+Символически, дифференциал первого порядка можно записать, вынесев функцию за скобку:
+$$dz = \left(
+{\partial \over \partial x_1}dx_1 +
+{\partial \over \partial x_2}dx_2 +
+\dots +
+{\partial \over \partial x_k}dx_k
+\right)z$$
+Можно заметить, что если вынести функцию за скобку в выражении дифференциала второго порядка, то в скобках останется 
+$$\left(
+{\partial \over \partial x_1}dx_1 +
+{\partial \over \partial x_2}dx_2 +
+\dots +
+{\partial \over \partial x_k}dx_k
+\right)^2$$
+т.е. дифференциал второго порядка можно записать как
+$$d^2z = \left(
+{\partial \over \partial x_1}dx_1 +
+{\partial \over \partial x_2}dx_2 +
+\dots +
+{\partial \over \partial x_k}dx_k
+\right)^2z$$
+"Правило" заключается в том, что сначала по правилам алгебры раскрывается степень, а затем все полученные члены домнажаются на $z$.
+Докажем что это правило работает для $d^nz$, если оно работает для $d^{n-1}z$.
+\begin{proof}
+	Мы уже знаем, что правило работает при $n =1$, $2$, поэтому осталось доказать шаг индукции.\newline
+	$$d^nz = \Sigma
+	C_{
+		\alpha_1,
+		\alpha_2
+		\dots,
+		\alpha_k
+		}
+	\cdot
+	{\partial^nz \over 
+	\partial x_1^{\alpha_1}
+	\partial x_2^{\alpha_2}
+	\dots
+	\partial x_k^{\alpha_k}
+	}
+	\cdot
+	dx_1^{\alpha_1}
+	dx_2^{\alpha_2}
+	\dots
+	dx_k^{\alpha_k}
+	$$
+Где $
+		\alpha_1,
+		\alpha_2
+		\dots,
+		\alpha_k$ - всевозможные группы неотрицательных чисел удовлетворяющих условию $ \alpha_1 + \alpha_2 + \dots + \alpha_k = n$, а
+$$
+	C_{
+		\alpha_1,
+		\alpha_2
+		\dots,
+		\alpha_k
+	} = 
+	{n! \over
+	\alpha_1!
+	\alpha_2!
+	\dots
+	\alpha_k!}
+	$$
+Суть "полиномиальные" коэффициенты.
+	\newline
+	\newline
+Предполагая что существует дифференциал $n + 1$, продифференцируем предыдущее выражение:
+	\begin{align*}d^{n+1}z = \Sigma
+	C_{
+		\alpha_1,
+		\alpha_2
+		\dots,
+		\alpha_k
+		}
+		\cdot\Big(
+	{\partial^{n+1}z \over 
+	\partial x_1^{\alpha_1 + 1}
+	\partial x_2^{\alpha_2}
+	\dots
+	\partial x_k^{\alpha_k}
+	}
+	\cdot
+	dx_1^{\alpha_1 + 1}
+	dx_2^{\alpha_2}
+	\dots
+		dx_k^{\alpha_k} &+\\+
+		{\partial^{n+1}z \over 
+	\partial x_1^{\alpha_1}
+	\partial x_2^{\alpha_2 + 1}
+	\dots
+	\partial x_k^{\alpha_k}
+	}
+	\cdot
+	dx_1^{\alpha_1}
+	dx_2^{\alpha_2 + 1}
+	\dots
+	dx_k^{\alpha_k}
+		&+\\+
+		\dots 
+		&+\\+
+		{\partial^{n+1}z \over 
+	\partial x_1^{\alpha_1}
+	\partial x_2^{\alpha_2}
+	\dots
+	\partial x_k^{\alpha_k + 1}
+	}
+	\cdot
+	dx_1^{\alpha_1}
+	dx_2^{\alpha_2}
+	\dots
+	dx_k^{\alpha_k + 1}\Big)
+	\end{align*}
+	То же самое выражение мы могли бы получить, формально перемножив символические выражения
+	$$\Sigma
+	C_{
+		\alpha_1,
+		\alpha_2
+		\dots,
+		\alpha_k
+		}
+	\cdot
+	{\partial^n \over 
+	\partial x_1^{\alpha_1}
+	\partial x_2^{\alpha_2}
+	\dots
+	\partial x_k^{\alpha_k}
+	}
+	\cdot
+	dx_1^{\alpha_1}
+	dx_2^{\alpha_2}
+	\dots
+	dx_k^{\alpha_k} \cdot
+	\left(
+	{\partial \over \partial x_1}dx_1 + 
+	{\partial \over \partial x_2}dx_2 + 
+	\dots
+	{\partial \over \partial x_k}dx_k
+	\right)
+	$$
+	И приписав к ним $z$.
+	Но это "произведение" суть
+	\begin{align*}
+	\left(
+	{\partial \over \partial x_1}dx_1 + 
+	{\partial \over \partial x_2}dx_2 + 
+	\dots
+	{\partial \over \partial x_k}dx_k
+	\right)^k
+	\cdot
+		\left(
+	{\partial \over \partial x_1}dx_1 + 
+	{\partial \over \partial x_2}dx_2 + 
+	\dots
+	{\partial \over \partial x_k}dx_k
+	\right) = \\
+		\left(
+	{\partial \over \partial x_1}dx_1 + 
+	{\partial \over \partial x_2}dx_2 + 
+	\dots
+	{\partial \over \partial x_k}dx_k
+		\right)^{k+1}
+	\end{align*}
+	Что и требовалось доказать.
+\end{proof}
+\subsection{Зависимые переменные}
+Пусть мы имеем сложную функцию $z = (x_1, x_2, \dots, x_k)$, где 
+$$x_i = \phi(t_1, t_2, \dots, t_m), \quad i = 1, 2, \dots, n$$
+$dx_1, dx_2, \dots, dx_k$ - дифференциалы не независимых переменных, а значит сами являются функциями и могут не быть постоянными.
+$$d^2z = 
+d\left({\partial z \over \partial x_1}\right)dx_1 + 
+d\left({\partial z \over \partial x_2}\right)dx_2 + 
+\dots +
+d\left({\partial z \over \partial x_k}\right)dx_k + 
+$$
+$$ + 
+{\partial z \over \partial x_1}d(dx_1) + 
+{\partial z \over \partial x_2}d(dx_2) + 
+\dots +
+{\partial z \over \partial x_k}d(dx_k)
+$$
+\subsection{Линейно зависимые переменные}
+Рассмотрим случай, когда $x_1, x_2, \dots, x_k$ - линейные
+функции от $t_1, t_2, \dots, t_m$, т.е.
+$$x_i =
+\alpha_{i1}t_1 + 
+\alpha_{i2}t_2 + 
+\dots +
+\alpha_{im}t_m + 
+\beta_i
+\quad i = 1, 2, ... k$$
+В этом случае
+$$dx_i = 
+\alpha_{i1}dt_1 + 
+\alpha_{i2}dt_2 + 
+\dots +
+\alpha_{im}dt_m
+= 
+\alpha_{i1}\Delta t_1 + 
+\alpha_{i2}\Delta t_2 + 
+\dots +
+\alpha_{im}\Delta t_m
+= \Delta x_i
+$$
+все первые дифференциалы функций $x_1, x_2, \dots x_k$ постоянны (т.к. равны приращению) и не за
+висят от $t_1, t_2, \dots, t_m$, а значит выкладки для функций с независи
+мыми переменными работают и для функций с линейно зависимыми.
