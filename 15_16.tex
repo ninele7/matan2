@@ -1,4 +1,4 @@
-\newcommand\R{\ensuremath{\mathbb{R}}}
+\newcommand\RRR{\ensuremath{\mathbb{R}}}
 \newcommand{\rom}[1]
     {\MakeUppercase{\romannumeral #1}}
 \newtheorem{theorem}{Теорема}[section]
@@ -12,9 +12,9 @@
 \end{theorem}
 
 \begin{proof}
-    $f$ определена на компакте $D \subset \R^m$. Проведем доказательство для числового случая, затем обобщим на $m$-мерное пространство.
+    $f$ определена на компакте $D \subset \RRR^m$. Проведем доказательство для числового случая, затем обобщим на $m$-мерное пространство.
     \[
-        f:\; D \rightarrow \R^1
+        f:\; D \rightarrow \RRR^1
     \]
     О/п: $f$ - неограничена: $\forall C > 0 \quad \exists x \in D:\;|f(x)| > C$. 
     Построим последовательность, будем брать разные $C$:
@@ -43,7 +43,7 @@
         \forall C > 0 \quad \exists x \in D:\;|f(x)| = \rho(f(x), 0) > C\\
         C=n \quad \exists x^{(n)} \in D:\; |f(x^{(n)})| = \rho(f(x^{(n)}), 0) > n\\
         \{x^{(n)}\} \subset D\text{ - ограничено }\Rightarrow \exists \{ x^{(n_k)} \} \subseteq \{x^{(n)}\}:\; x^{(n_k)} \xrightarrow[k \rightarrow \infty]{} a\\
-        f(x^{(n_k)}) \xrightarrow[k \rightarrow \infty]{\R^p} f(a)\\
+        f(x^{(n_k)}) \xrightarrow[k \rightarrow \infty]{\RRR^p} f(a)\\
         |f(x^{(n_k)})| = \rho(f(x^{(n_k)}), 0) > n_k  \xrightarrow[k \rightarrow \infty]{} \infty
     \end{gather*}
 
@@ -51,7 +51,7 @@
 
 \newpage
 \begin{theorem}[\rom{2} теорема Вейерштрасса]
-    Функция $f:\; D \subseteq \R^m \rightarrow \R$(только для одномерного случая, т.к нет понятия точных граней для вектор-функции), 
+    Функция $f:\; D \subseteq \RRR^m \rightarrow \RRR$(только для одномерного случая, т.к нет понятия точных граней для вектор-функции), 
     непрерывная на компакте(замкнутое ограниченное множество), достигает своих точных граней, т.е
     \[\exists a, b \in D:\; f(a)=\sup_{x\in D}{f(x)} =M , f(b)=\inf_{x\in D}{f(x)}=m \]
 \end{theorem}
@@ -90,7 +90,7 @@
 \section{Равномерная непрерывность. Теорема Кантора}
 
 \begin{definition}
-    $f:\; D \subseteq \R^m \rightarrow \R^k$. 
+    $f:\; D \subseteq \RRR^m \rightarrow \RRR^k$. 
 
     $f$ равномерна нерерывна на $D$, если
     \[
