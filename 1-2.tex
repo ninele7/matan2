@@ -1,10 +1,10 @@
 \section{Линейное (векторное) пространство. Векторное пространство $\mathbb{R}^m$.}
 \subsection{Линейное пространство}
-Пусть дано поле $F$. Линейным пространством над полем $F$ называется произвольное не пустое множество $V$, на котором заданы операция сложения, являющаяся Абелевой группой, и операция умножения вектора на любой скаляр из $F$. Умножение на скаляр обладает следующими свойствами:
+Пусть дано поле $F$. Линейным пространством над полем $F$ называется произвольное не пустое множество $V$, на котором заданы операция сложения, относительно которой данное множество является Абелевой группой, и операция умножения вектора на любой скаляр из $F$. Умножение на скаляр обладает следующими свойствами:
 \begin{itemize}
     \item $x, y \in V \land t \in F \implies t(x + y) = tx + ty$
-    \item $t, s \in F \land x \in F \implies (t + s)x = tx + sx$
-    \item $t, s \in F \land x \in F \implies t(sx) = (ts)x$
+    \item $t, s \in F \land x \in V \implies (t + s)x = tx + sx$
+    \item $t, s \in F \land x \in V \implies t(sx) = (ts)x$
     \item $x \in V \implies 1x = x$
 \end{itemize}
 \subsection{Векторное пространство $\mathbb{R}^m$}
@@ -58,8 +58,10 @@ $\exists a, b \in \mathbb{R}^+ : \forall x, y \in X : a\rho_2(x, y) \leq \rho_1(
         \equiv x = y$
         \item $\rho_0(x, y) = 
         \max_{k \in \overline{1, m}} |x_k - y_k| \leq
-        |x_k - z_k| + |z_k - y_k| \leq
-        \max_{i \in \overline{1, m}} |x_i - z_i| + |z_i - y_i| =
+        \max_{k \in \overline{1, m}}
+        (|x_k - z_k| + |z_k - y_k|) \leq
+        \max_{i \in \overline{1, m}} |x_i - z_i| + 
+        \max_{j \in \overline{1, m}} |z_j - y_j| =
         \rho_0(x, z) + \rho_0(z, y)$
     \end{itemize}
     \item $\rho_1(x, y) = \sum_{k \in \overline{1, m}} |x_i - y_i|$
@@ -80,7 +82,7 @@ $\exists a, b \in \mathbb{R}^+ : \forall x, y \in X : a\rho_2(x, y) \leq \rho_1(
 $$
 \rho_0(x,y) \leq \rho_1(x,y) \leq m\rho_0(x,y)
 $$
-$\rho_0$ всегда не больше $\rho_1$, так как $\rho_1$ равна $\rho_0$ плюс несколько неотрицательных слагаемых. Но так как $\rho_0$ является максимумом из всех слагаемых $\rho_1$, то ей можно оценить каждое из слагаемых. \\
+$\rho_0$ всегда не больше $\rho_1$, так как $\rho_1$ равна $\rho_0$ плюс несколько неотрицательных слагаемых. Но так как $\rho_0$ является максимумом из всех слагаемых $\rho_1$, то ею можно оценить каждое из слагаемых. \\
 Рассмотрим $\rho_0$ и $\rho_2$:
 $$
 \rho_0(x,y) \leq \rho_2(x,y) \leq \sqrt{m} \rho_0(x,y)
