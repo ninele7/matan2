@@ -1,0 +1,21 @@
+\ section { Якобиан системы }
+    
+Рассмотрим отображение $f : E \longmapsto R^m,$ где $E \subset R^n.$ Оно состоит из $m$ функций: 
+$f = \left(f_1 \left(x_1,\ldots,x_n \right),f_2 \left(x_1,\ldots,x_n \right),\ldots,f_m \left(x_1,\ldots,x_n \right) \right),$ которые осуществляют отображение множества $E$ из $R^n$ в пространство $R^m.$
+    		
+Предположим, что функции $f_k \left(x_1,\ldots,x_n \right),$ где $k = \overline{1,m},$ дифференцируемы, то есть имеют частные производные по аргументам $(x_1,\ldots,x_n):$
+$\frac{\partial f_1}{\partial x_1},\ldots,\frac{\partial f_n}{\partial x_n}, x = \overline{1,m}.$
+Составим матрицу из этих частных производных по переменным $x_1,\ldots,x_n$
+
+$$
+\begin{pmatrix} \frac{\partial f_1}{\partial x_1} &; \frac{\partial f_1}{\partial x_2} &; \ldots & \frac{\partial f_1}{\partial x_n} \\ \frac{\partial f_2}{\partial x_1} &; \frac{\partial f_2}{\partial x_2} &; \ldots & \frac{\partial f_2}{\partial x_n} \\ \ldots & \ldots & \ldots & \ldots \\ \frac{\partial f_m}{\partial x_1} &; \frac{\partial f_m}{\partial x_2} &; \ldots & \frac{\partial f_m}{\partial x_n} \end{pmatrix}
+$$
+
+Такая матрица называется матрицей Якоби.
+Если $m = n,$ то получаем квадратную матрицу, определитель которой называется определителем Якоби или якобианом $Jf(x)$ и обозначается
+
+$$
+Jf(x) = \frac{\partial (f_1, \ldots, f_n)}{\partial (x_1, \dots, x_n)} = \begin{vmatrix} \frac{\partial f_1}{\partial x_1}(x) &; \frac{\partial f_1}{\partial x_2}(x) &; \ldots & \frac{\partial f_1}{\partial x_n}(x) \\ \frac{\partial f_2}{\partial x_1}(x) &; \frac{\partial f_2}{\partial x_2}(x) &; \ldots & \frac{\partial f_2}{\partial x_n}(x) \\ \dots & \dots & \dots & \dots \\ \frac{\partial f_n}{\partial x_1}(x) &; \frac{\partial f_n}{\partial x_2}(x) &; \ldots & \frac{\partial f_n}{\partial x_n}(x) \end{vmatrix}.
+$$
+    
+Замечание. Если все частные производные непрерывны, то и сам оределитель Якоби является непрерывной функцией.
