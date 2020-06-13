@@ -33,7 +33,7 @@
     \[
         |f(x^{(n_k)})| > n_k  \xrightarrow[k \rightarrow \infty]{} \infty
     \]
-    Т.е. $f$ - б.б. Получили противоречие. 
+    Т.е. подпоследовательность $\{f(x^{(n_k)})\}$ - б.б. Получили противоречие. 
         
     Рассмотрим теперь не числовую функцию, а вектор-функцию.
     Док-во аналогично, только модуль меняется на метрику.
@@ -42,8 +42,8 @@
     \begin{gather*}
         \forall C > 0 \quad \exists x \in D:\;|f(x)| = \rho(f(x), 0) > C\\
         C=n \quad \exists x^{(n)} \in D:\; |f(x^{(n)})| = \rho(f(x^{(n)}), 0) > n\\
-        \{x^{(n)}\} \subset D\text{ - ограничено }\Rightarrow \exists \{ x^{(n_k)} \} \subseteq \{x^{(n)}\}:\; x^{(n_k)} \xrightarrow[k \rightarrow \infty]{} a\\
-        f(x^{(n_k)}) \xrightarrow[k \rightarrow \infty]{\RRR^p} f(a)\\
+        \{x^{(n)}\} \subset D\text{ - ограничено }\Rightarrow \exists \{ x^{(n_k)} \} \subseteq \{x^{(n)}\}:\; x^{(n_k)} \xrightarrow[k \rightarrow \infty]{} a \in D\\
+        \Rightarrow f(x^{(n_k)}) \xrightarrow[k \rightarrow \infty]{\RRR^p} f(a)\\
         |f(x^{(n_k)})| = \rho(f(x^{(n_k)}), 0) > n_k  \xrightarrow[k \rightarrow \infty]{} \infty
     \end{gather*}
 
@@ -108,23 +108,20 @@
 
     О/п:
     \[
-        \forall \varepsilon > 0\;\; \exists \delta(\varepsilon) > 0 \quad
-        \exists x, y \in D \quad \rho_m(x, y) < \delta(\varepsilon) \Rightarrow \rho_k(f(x), f(y)) \geqslant \varepsilon
+        \exists \varepsilon > 0\;\; \forall \delta > 0 \quad
+        \exists x, y \in D \quad \rho_m(x, y) < \delta \wedge \rho_k(f(x), f(y)) \geqslant \varepsilon
     \]
-     Возьмем $0 < \delta_n  \xrightarrow[n \rightarrow \infty]{} 0$
+    Поскольку для $\delta$ мы можем брать разные велечины:
     \[
-        \forall \varepsilon > 0\;\; \exists \delta(\varepsilon) > 0 \quad
-        \exists x^{(n)}, y^{(n)} \in D \quad \rho_m(x^{(n)}, y^{(n)}) < \delta(\varepsilon) \Rightarrow \rho_k(f(x^{(n)}), f(y^{(n)})) \geqslant \varepsilon
+        0 < \delta_n  \xrightarrow[n \rightarrow \infty]{} 0 \quad
+        \exists x^{(n)}, y^{(n)} \in D \quad \rho_m(x^{(n)}, y^{(n)}) < \delta_n \Rightarrow \rho_k(f(x^{(n)}), f(y^{(n)})) \geqslant \varepsilon
     \]
     $\{x^{(n)}\}$ ограниченная, можно выделить сходящуюся подпоследовательность. Ее предел лежит в множестве, т.к. оно замкнутое:
     \[
-        \exists \{x^{(n_p)}\} \in \{x^{(n)}\}: \quad x^{n_p} \xrightarrow[p \rightarrow \infty]{} a \in D
+        \exists \{x^{(n_p)}\} \in \{x^{(n)}\}: \quad x^{n_p} \xrightarrow[p \wedge \infty]{} a \in D
     \]
-    Сделаем то же для $\{y^{(n)}\}$: 
-    \[
-        \exists \{y^{(n_p)}\} \in \{y^{(n)}\}: \quad y^{n_p} \xrightarrow[p \rightarrow \infty]{} a \in D
-    \]
-    Будет сходится так же к $a$, так как по построению
+    Рассмотрим подпоследовательность $\{y^{(n_p)}\}$ 
+    и заметим, что она будет сходиться так же к $a$, так как по построению
     $\rho_m(x^{(n_p)}, y^{(n_p)}) < \delta_{n_p}$, т.е. расстояние стремится к 0, образы стремятся к одной точке.
     В силу непрерывности функции:
     \begin{gather*}
