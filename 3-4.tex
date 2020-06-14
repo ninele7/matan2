@@ -84,7 +84,7 @@ $$ \textbf{x}^{(n)} = (x^{(n)}_1, x^{(n)}_2, ..., x^{(n)}_m)$$
 
 Последовательность$\{\textbf{x}^{(n)}\}^{\infty}_{n=1} \subset \mathbb {R}^m$ сходится, если 
 $$
-\exists \textbf {a} \in \mathbb {R}^m \; \forall \varepsilon \geq 0 \; \exists N_{\varepsilon} \in \mathbb {N} \; \forall n > N_{\varepsilon} \quad \rho(\textbf{x}^{(n)}, a) < {\varepsilon}, \quad \textbf {a} = \lim_{n\to\infty}{\textbf{x}^{(n)}}
+\exists \textbf {a} \in \mathbb {R}^m \; \forall \varepsilon > 0 \; \exists N_{\varepsilon} \in \mathbb {N} \; \forall n > N_{\varepsilon} \quad \rho(\textbf{x}^{(n)}, a) < {\varepsilon}, \quad \textbf {a} = \lim_{n\to\infty}{\textbf{x}^{(n)}}
 $$
 Можем переписать это в другом виде 
 $$
@@ -102,13 +102,13 @@ $$
   
   Предположим, что последовательность имеет два предела, тогда 
 $$
-\exists \textbf {a} \in \mathbb {R}^m \; \forall \varepsilon \geq 0 \; \exists N_{\varepsilon} \in \mathbb {N} \; \forall n > N_{\varepsilon} \quad \rho(\textbf{x}^{(n)}, a) < {\varepsilon}, \quad \textbf {a} = \lim_{n\to\infty}{\textbf{x}^{(n)}}
+\exists \textbf {a} \in \mathbb {R}^m \; \forall \varepsilon > 0 \; \exists N_{\varepsilon} \in \mathbb {N} \; \forall n > N_{\varepsilon} \quad \rho(\textbf{x}^{(n)}, a) < {\varepsilon}, \quad \textbf {a} = \lim_{n\to\infty}{\textbf{x}^{(n)}}
 $$
 
 $$
-\exists \textbf {b} \in \mathbb {R}^m \; \forall \varepsilon \geq 0 \; \exists K_{\varepsilon} \in \mathbb {N} \; \forall k > K_{\varepsilon} \quad \rho(\textbf{x}^{(n)}, b) < {\varepsilon}, \quad \textbf {b} = \lim_{n\to\infty}{\textbf{x}^{(n)}}
+\exists \textbf {b} \in \mathbb {R}^m \; \forall \varepsilon > 0 \; \exists K_{\varepsilon} \in \mathbb {N} \; \forall k > K_{\varepsilon} \quad \rho(\textbf{x}^{(n)}, b) < {\varepsilon}, \quad \textbf {b} = \lim_{n\to\infty}{\textbf{x}^{(n)}}
 $$
-Теперь имеем, что за пределами $B(\textbf {a}, \varepsilon)$ лежит конечное число элементов последовательности, и за пределами $B(\textbf {b}, \varepsilon)$ находится конечно число элементов последовательности. Приходим к противоречию.
+Пусть $B(\textbf {a}, \varepsilon)$ и $B(\textbf {b}, \varepsilon)$ не пересекающиеся $\varepsilon$-шары. Тогда имеем, что за пределами $B(\textbf {a}, \varepsilon)$ лежит конечное число элементов последовательности, и за пределами $B(\textbf {b}, \varepsilon)$ находится конечное число элементов последовательности. Приходим к противоречию.
   \item
   Если последовательность сходится к вектору $\textbf {a}$, то любая её подпоследовательность сходится $\textbf {a}$.
   $$
