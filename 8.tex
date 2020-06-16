@@ -1,34 +1,53 @@
-
 \section{Понятие предела векторной функции многих переменных.}
 
+\begin{definition}
+    Вектор $a$ называется пределом векторной функции $r(t),t\in{X}$, 
+    при $t\to{t_0}$(или в точке $t\to{t_0}$), если
 
-\textbf{Теорема} 
+    $$\lim_{t\to{t_0}}\vert{r(t)-a}\vert=0\eqno(1)$$
 
-Пусть функция $f(x;y)$ определена на множестве $X\times{Y}$ и $x_0\in{X'}, y_0\in{Y'}$. 
-Если существует $\underset{y\rightarrow{y_0}}{\underset{x\rightarrow{x_0}}{lim}}f(x,y)=A$ и для любого $x\in{X}$, $x\neq{x_0}$, 
-существует $\underset{y\rightarrow{y_0}}{lim}f(x,y)=\varphi(x)$, то существует и 
-$\underset{x\rightarrow{x_0}}{lim}\underset{y\rightarrow{y_0}}{lim}f(x,y)$, он равен $A$.
+    В этом случе пишут
 
-\textit{Доказательство.} По определению двойного предела
+    $$\lim_{t\to{t_0}}r(t)=a\eqno(2)$$
+\end{definition}
 
-$$\forall\epsilon>0\;\exists\delta=\delta(\epsilon)>0\;\forall(x,y)\in{X}\times{Y}$$
-$$
-\begin{pmatrix}
-0<\vert{x-x_0}\vert<\delta, & \; \\
-\; & \Rightarrow\vert{f(x,y)-A}\vert<\frac{\epsilon}{2} \\
-0<\vert{y-y_0}\vert<\delta, & \;
-\end{pmatrix}
-.$$
+В этом определении $\vert{r(t)-a}\vert$ -- числовая функция. Таким образом,
+понятие предела векторной функции сводится к понятию предела скалярной функции (1).
+Вспомнив определение этого понятия, получим, что (2) означает 
 
-По определению однократного предела для любого $x\in{X}$, $x\neq{x_0}$,
+$$\forall\varepsilon\exists\delta:\;\forall{t}\in{X}\cap{U}(t_0;\delta)\eqno(3)$$
 
-$$\forall\epsilon>0\;\;\exists\tilde{\delta}=\tilde{\delta}(\epsilon)>0\;\;\forall{y}\in{Y}$$
-$$(0<\vert{y-y_0}\vert<\tilde{\delta}\Rightarrow\vert{f(x,y)-\varphi(x)}\vert<\frac{\epsilon}{2})$$
+выполняется неравенство
 
-Возьмем $x\in{X}$ из проколотой $\delta$-окрестности точки $x_0$ и рассмотрим разность $\varphi(x)-A$. 
-Прибавим и отнимем в этом выражении $f(x; y)$ с $y\in@Y$, $0<\vert{y-y_0}\vert<min\lbrace\delta,\tilde{\delta}\rbrace$, 
-и получим оценку
+$$\vert{r(t)-a}\vert<\varepsilon\eqno(4)$$
 
-$$\vert\varphi(x)-A\vert=\vert\varphi(x)\pm{f(x,y)}-A\leq\vert\varphi(x)-f(x,y)\vert+\vert{f(x,y)-A}\vert<\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon,$$
+Как и в случае скалярных функций, будем полагать, что $t_0$ -- точка прикосновения (конечная
+или бесконечно удалённая) множества $X$. Если $t_0$ -- конечная точка, то условие (3) можно записать 
+в виде
 
-т. е. $\underset{x\rightarrow{x_0}}{lim}\underset{y\rightarrow{y_0}}{lim}f(x,y)=A$.
+$$\vert{t-t_0}\vert<\delta,\;t\in{X},$$
+
+а если $t_0$ -- одна из бесконечно удалённых точек $\infty,+\infty$ или $-\infty$, то соответственно 
+в одном из следующих трёх видов:
+
+$$\vert{t}\vert>\frac{1}{\delta},t>\frac{1}{\delta} or t<-\frac{1}{\delta},$$
+
+где всюду $t\in{X}$.
+
+$\;$
+
+\textit{Свойства пределов векторных функций}
+
+\begin{enumerate}
+    \item Если $\lim_{t\to{t}}r(t)=a$, то $\lim_{t\to{t_0}}\vert{r(t)}\vert=\vert{a}\vert$
+    Это непосредственно следует из неравенства $\vert\vert{r}\vert-\vert{a}\vert\vert\leq\vert{r-a}\vert$.
+    Геометрический смысл этого неравенства состоит в том, что разность длин двух сторон треугольника 
+    не превышает длины его третьей стороны.
+    \item $\lim_{t\to{t}}[r_1(t)+r_2(t)]=\lim_{t\to{t_0}}r_1(t)+\lim_{t\to{t_0}}r_2(t)$.
+    \item $\lim_{t\to{t_0}}f(t)r(t)=\lim_{t\to{t_0}}f(t)\lim_{t\to{t_0}}r(t)$ ($f(t)$ -- скалярная функция).
+    \item $\lim_{t\to{t_0}}r_1(t)r_2(t)=\lim_{t\to{t_0}}r_1(t)\lim_{t\to{t_0}}r_2(t)$.
+    \item $\lim_{t\to{t_0}}r_1(t)\times{r_2(t)}=\lim_{t\to{t_0}}r_1(t)\times\lim_{t\to{t_0}}r_2(t)$.
+\end{enumerate}
+В свойствах 1-5 все рассматриваемые функции определены на некотором множестве $X\subset\mathbb{R}$. 
+В свойствах 2-5 предполагается, что все пределы, входящие в правые части равенств, существуют и утверждается,
+что существуют пределы, стоящие в левых частях равенств, причём имеют место написанные формулы.
