@@ -3,10 +3,18 @@
 $\{x^{(n)}\}_{n=1}^{\infty}$ - \textcolor{red} {фундаментальная} в $\mathbb {R}^m$, если $\forall \varepsilon > 0$ $\exists n_\varepsilon \in \mathbb {N}$ : $\forall n, m > n_\varepsilon$
 
 $\Rightarrow$ $\rho (x^{(n)}, x^{(m)})  < \varepsilon$
-\vspace{1cm}
 
-\textcolor{red}{Критерий Коши}:  $\{x^{(n)}\}_{n=1}^{\infty}$ - сходится $\Leftrightarrow$ $\{x^{(n)}\}_{n=1}^{\infty}$ - фундаментальная.
-\vspace{1cm}
+\subsection{Полнота пространства $\mathbb {R}^m$ }
+Метрическое пространство ${(X, \rho)}$ называется \textcolor{red}{полным}, если любая фундаментальная последовательность сходится. 
+
+В любом метрическом пространстве любая сходящаяся последвательность является фундаментальной. Действительно, если последовательность $\{x^{(n)}\}$ сходится, то 
+
+$\exists a \in X:$ $\forall \varepsilon > 0$ $ \exists n_\varepsilon \in \mathbb {N}$ $\forall n > n_\varepsilon $ $\Rightarrow$ $\rho(x^{(n)}, a) < \frac{\varepsilon}{2}$
+
+$\forall n, m > n_\varepsilon$: $\rho(x^{(n)}, x^{(m)}) < \rho(x^{(n)}, a) + \rho(a, x^{(m)}) < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$
+
+\subsection{Критерий Коши} 
+$\{x^{(n)}\}_{n=1}^{\infty}$ - сходится в $\mathbb {R}^m$ $\Leftrightarrow$ $\{x^{(n)}\}_{n=1}^{\infty}$ - фундаментальная в $\mathbb {R}^m$.
 
 \textcolor{red}{Доказательство}:
 
@@ -17,13 +25,18 @@ $\forall \varepsilon > 0$ $\exists n_\varepsilon \in \mathbb {N}$ $\forall m > n
 
 $\rho(x^{(n)}, x^{(m)})$ < $\rho(x^{(n)}, a) + \rho(x^{(m)}, a) = \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$ $\Rightarrow$
 $\{x^{(n)}\}_{n=1}^{\infty}$ - фундаентальная
-\vspace{1cm}
 
-2. $\{x^{(n)}\}_{n=1}^{\infty}$ - фундаентальная 
+\vspace{0.5cm}
 
-$\forall \varepsilon > 0$ $\exists N_1 \in \mathbb {N}$ : $\forall n, m > N_1$ $\Rightarrow$ $\rho (x^{(n)}, x^{(m)})  < \frac{\varepsilon}{2}$
+2. $\{x^{(n)}\}_{n=1}^{\infty}$ - фундаментальная 
 
-Так как фундаментальная последовательность $\{x_n\}$ является ограниченной, то по теореме Больцано-Вейерштрасса она содержит сходящуюся подпоследовательность $\{x_{n_k}\}$. Пусть ее предел равен $a$, т.е. $\lim_{k\to\infty} x^{(n_k)} = a$
+Зададим $\varepsilon = 1$ $\exists N_1 \in \mathbb {N}$ : $\forall n, m > N_1$ $\Rightarrow$ $\rho (x^{(n)}, x^{(m)})  < 1$
+
+Пусть $m = N_1$  $\forall n \ge N_1$ : $\rho (x^{(n)}, x^{(m)})  < 1$, т.е. $x^{(N_1)} - 1 < x^{(n)} < x^{(N_1)} + 1$ $|x^{(n)}| \leq |x^{(N_1)}| + 1$
+
+$A =  |x^{(N_1)}| + 1$ $\Rightarrow$ $|x^{(n)}| \leq A \forall n \in \mathbb {N} $  $\Rightarrow$ $\{x^{(n)}\}$ - ограничена 
+
+Так как фундаментальная последовательность $\{x^{(n)}\}$ является ограниченной, то по теореме Больцано-Вейерштрасса она содержит сходящуюся подпоследовательность $\{x^{({n_k})}\}$. Пусть ее предел равен $a$, т.е. $\lim_{k\to\infty} x^{(n_k)} = a$
 
 $\forall \varepsilon > 0$ $\exists N_2 \in \mathbb {N}$ $\forall k > N_2$ $\Rightarrow$ $\rho (x^{(n_k)}, a)  < \frac{\varepsilon}{2}$
 
@@ -31,8 +44,8 @@ $N_\varepsilon = \max(N_1, N_2)$
 $n_k \ge N_\varepsilon$
 Тогда при $m = n_k \forall n > N_\varepsilon$ 
 
-$\rho (x^n, x^{n_k}) < \frac{\varepsilon}{2}$
+$\rho (x^{(n)}, x^{(n_k)}) < \frac{\varepsilon}{2}$
 
-$\rho (x^n, a) \leq \rho (x^n, x^{n_k}) + \rho (x^n, a) < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$, т.е.
+$\rho (x^{(n)}, a) \leq \rho (x^{(n)}, x^{(n_k)}) + \rho (x^{(n_k)}, a) < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$, т.е.
 
 $\lim_{n\to\infty} x^{(n)} = a$
