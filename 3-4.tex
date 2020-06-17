@@ -16,7 +16,7 @@
 \begin{enumerate} 
   \item $\rho(x, y) \geq 0$, - очевидно, корень квадратный всегда $\geq 0$ 
   \item  $\rho(x, y) = 0 \Leftrightarrow x-y = 0, \ x=y$, - очевидно
-  \item $\rho(x, y) = \sqrt{(x - y, x - y)} = \sqrt{-(y-x, x - y)} = \sqrt{-(x -y, y - x)} = \sqrt{(y - x, y - x)}=\rho(y, x)$, по свойству скалярного произведения (3)
+  \item $\rho(x, y) = \sqrt{(x - y, x - y)} = \sqrt{-(y-x, x - y)} = \sqrt{-(x -y, y - x)} = \sqrt{(y - x, y - x)}=\rho(y, x)$, по свойствам скалярного произведения (1) и (3) 
   \item $\rho(x, y) \leq \rho(x, z) + \rho(y, z)$ (докажем это утверждение после введения неравенства Коши-Буняковского)
 \end{enumerate}
 \subsection{Неравенство Коши-Буняковского}
@@ -28,12 +28,12 @@ $$
 $$
 Раскроем скобки и преобразуем, воспользовавшись свойствами скалярного произведения (1), (2), (3)
 $$
-\Phi(t) = (x +ty, x + ty) = (x, x) + t(y, x) + (x, ty) + t^2(y, y) = t^2(y, t) + 2t(x, y) + (x, x)
+\Phi(t) = (x +ty, x + ty) = (x, x) + t(y, x) + (x, ty) + t^2(y, y) = t^2(y, y) + 2t(x, y) + (x, x)
 $$
 
 Поскольку $x$ и $y$ мы зафиксировали и рассматриваем  функцию $\Phi(t)$ как функцию переменного $t$, то она квадратична. Также заметим, что она принимает неотрицательные значения, поскольку эта функция является скалярным квадратом.
 
-Теперь рассмотрим значение этой функции как квадратный трехчлен и заметим, что его дискримант $\leq 0$, поскольку главный коэффициент $\geq 0$, как и значение квадратного трехчлена. Найдем значение дискриминанта 
+Теперь рассмотрим значение этой функции как квадратный трехчлен и заметим, что его дискримант $\leq 0$, поскольку главный коэффициент $\geq 0$, как и значение квадратного трехчлена (график выше оси абцисс). Найдем значение дискриминанта 
 $$
 D = [2(x, y)]^2 - 4(y, y) \cdot (x, x) \leq 0
 $$
@@ -51,7 +51,7 @@ $$
 $$
 Полученное неравенство $|(x, y)| \leq |x| \cdot |y|$ - неравенство Коши-Буняковского.
 
-Докажем выполнение 4-й аксиомы метрики евклидова пространства. Рассмотрим $\rho^2(x, y)$ и преобразуем выражение, воспользовавшись свойством скалярного произведения $(x, y) = (y, x)$
+Докажем выполнение 4-й аксиомы метрики евклидова пространства. Рассмотрим $\rho^2(x, y)$ и преобразуем выражение, воспользовавшись свойством скалярного произведения (1) и (2)
 $$
 \rho^2(x, y) = (x - y, x - y) = (x, x) - (y, x) - (x, y) + (y, y) = (x, x) - 2(x, y) + (y, y)
 $$
@@ -62,7 +62,7 @@ $$
 Выражение $(x - y, x - y)$ представимо в виде $(x - z - (y - z), x - z - (y - z))$. Подставляем $x = x - z$ и $y = y - z$ в выражение $(1)$
 \begin{equation*}
 \begin{gathered}
-\rho^2(x, y) \leq (x - z, x - z) + 2\sqrt{x - z, x - z} + 2\sqrt{y - z, y - z} + (y - z, y - z) = \\
+\rho^2(x, y) \leq (x - z, x - z) + 2\sqrt{x - z, x - z} \cdot 2\sqrt{y - z, y - z} + (y - z, y - z) = \\
 \rho^2(x, z) + 2\rho(x, z) \cdot \rho(y, z) + \rho^2(y, z) = [\rho(x, z) + \rho(y, z)]^2
 \end{gathered}
 \end{equation*}
@@ -84,7 +84,7 @@ $$ \textbf{x}^{(n)} = (x^{(n)}_1, x^{(n)}_2, ..., x^{(n)}_m)$$
 
 Последовательность$\{\textbf{x}^{(n)}\}^{\infty}_{n=1} \subset \mathbb {R}^m$ сходится, если 
 $$
-\exists \textbf {a} \in \mathbb {R}^m \; \forall \varepsilon > 0 \; \exists N_{\varepsilon} \in \mathbb {N} \; \forall n > N_{\varepsilon} \quad \rho(\textbf{x}^{(n)}, a) < {\varepsilon}, \quad \textbf {a} = \lim_{n\to\infty}{\textbf{x}^{(n)}}
+\exists \textbf {a} \in \mathbb {R}^m \; \forall \varepsilon > 0 \; \exists N_{\varepsilon} \in \mathbb {N} \; \forall n > N_{\varepsilon} \quad \rho(\textbf{x}^{(n)}, \textbf {a}) < {\varepsilon}, \quad \textbf {a} = \lim_{n\to\infty}{\textbf{x}^{(n)}}
 $$
 Можем переписать это в другом виде 
 $$
@@ -102,11 +102,11 @@ $$
   
   Предположим, что последовательность имеет два предела, тогда 
 $$
-\exists \textbf {a} \in \mathbb {R}^m \; \forall \varepsilon > 0 \; \exists N_{\varepsilon} \in \mathbb {N} \; \forall n > N_{\varepsilon} \quad \rho(\textbf{x}^{(n)}, a) < {\varepsilon}, \quad \textbf {a} = \lim_{n\to\infty}{\textbf{x}^{(n)}}
+\exists \textbf {a} \in \mathbb {R}^m \; \forall \varepsilon > 0 \; \exists N_{\varepsilon} \in \mathbb {N} \; \forall n > N_{\varepsilon} \quad \rho(\textbf{x}^{(n)}, \textbf {a}) < {\varepsilon}, \quad \textbf {a} = \lim_{n\to\infty}{\textbf{x}^{(n)}}
 $$
 
 $$
-\exists \textbf {b} \in \mathbb {R}^m \; \forall \varepsilon > 0 \; \exists K_{\varepsilon} \in \mathbb {N} \; \forall k > K_{\varepsilon} \quad \rho(\textbf{x}^{(n)}, b) < {\varepsilon}, \quad \textbf {b} = \lim_{n\to\infty}{\textbf{x}^{(n)}}
+\exists \textbf {b} \in \mathbb {R}^m \; \forall \varepsilon > 0 \; \exists K_{\varepsilon} \in \mathbb {N} \; \forall k > K_{\varepsilon} \quad \rho(\textbf{x}^{(n)}, \textbf {b}) < {\varepsilon}, \quad \textbf {b} = \lim_{n\to\infty}{\textbf{x}^{(n)}}
 $$
 Пусть $B(\textbf {a}, \varepsilon)$ и $B(\textbf {b}, \varepsilon)$ не пересекающиеся $\varepsilon$-шары. Тогда имеем, что за пределами $B(\textbf {a}, \varepsilon)$ лежит конечное число элементов последовательности, и за пределами $B(\textbf {b}, \varepsilon)$ находится конечное число элементов последовательности. Приходим к противоречию.
   \item
@@ -137,11 +137,11 @@ $$
   $$
   Представим в другом виде
   $$
-  \rho(\textbf {x}^{(n)}, 0) - \rho(\textbf {a}, 0) \leq \rho(\textbf {x}^{(n)}, a) \Rightarrow |\rho(\textbf {x}^{(n)}, 0) - \rho(\textbf {a}, 0)| \leq \rho(\textbf {x}^{(n)}, a) 
+  \rho(\textbf {x}^{(n)}, 0) - \rho(\textbf {a}, 0) \leq \rho(\textbf {x}^{(n)}, \textbf {a}) \Rightarrow |\rho(\textbf {x}^{(n)}, 0) - \rho(\textbf {a}, 0)| \leq \rho(\textbf {x}^{(n)}, \textbf {a}) 
   $$
-  Воспользуемся этой оценкой в выражении (2) и вспомним, что по условию ${\rho(\textbf {x}^{(n)}, a) \underset{n \to \infty}{\longrightarrow} 0}$
+  Воспользуемся этой оценкой в выражении (2) и вспомним, что по условию ${\rho(\textbf {x}^{(n)}, \textbf {a}) \underset{n \to \infty}{\longrightarrow} 0}$
   $$
-  ||\textbf {x}^{(n)}| - |\textbf {a}|| = |\rho(\textbf {x}^{(n)}, 0) - \rho(\textbf {a}, 0)| \leq \rho(\textbf {x}^{(n)}, a) \underset{n \to \infty}{\longrightarrow} 0
+  ||\textbf {x}^{(n)}| - |\textbf {a}|| = |\rho(\textbf {x}^{(n)}, 0) - \rho(\textbf {a}, 0)| \leq \rho(\textbf {x}^{(n)}, \textbf {a}) \underset{n \to \infty}{\longrightarrow} 0
   $$
   Утверждение доказано.
   \item
@@ -159,23 +159,23 @@ $$
   По условию $\textbf {x}^{(n)}$, $\textbf {y}^{(n)}$ - сходятся, то есть
   \begin{equation*}
   \begin{gathered}
-  \forall \varepsilon > 0 \; \forall n > N_1(\varepsilon) \;\rho_0(\textbf {x}, a) = \underset{\forall i=1, m}{\max}{|\textbf{x}^{(n)}_i - \textbf{a}_i|} < \frac{\varepsilon}{2|\lambda|}\\
-    \forall \varepsilon > 0 \; \forall n > N_2(\varepsilon) \;\rho_0(\textbf {y}, b) = \underset{\forall i=1, m}{\max}{|\textbf{y}^{(n)}_i - b_i|} < \frac{\varepsilon}{2|\mu|}
+  \forall \varepsilon > 0 \; \forall n > N_1(\varepsilon) \;\rho_0(\textbf {x}, \textbf {a}) = \underset{\forall i=1, m}{\max}{|{x}^{(n)}_i - {a}_i|} < \frac{\varepsilon}{2|\lambda|}\\
+    \forall \varepsilon > 0 \; \forall n > N_2(\varepsilon) \;\rho_0(\textbf {y}, \textbf {b}) = \underset{\forall i=1, m}{\max}{|{y}^{(n)}_i - {b}_i|} < \frac{\varepsilon}{2|\mu|}
   \end{gathered}
   \end{equation*}
   
   Рассмотрим расстояние между векторами $ \lambda \textbf {x}^{(n)} + \mu \textbf {y}^{(n)}$ и $\lambda \textbf {a} + \mu \textbf {b}$
   $$
-  \rho(\lambda \textbf {x}^{(n)} + \mu \textbf {y}^{(n)}, \lambda \textbf {a} + \mu \textbf {b}) = \underset{\forall i=1, m}{\max}{|(\lambda \textbf {x}^{(n)}_i + \mu \textbf {y}^{(n)}_i) - (\lambda \textbf {a}_i + \mu \textbf {b}_i)|}
+  \rho(\lambda \textbf {x}^{(n)} + \mu \textbf {y}^{(n)}, \lambda \textbf {a} + \mu \textbf {b}) = \underset{\forall i=1, m}{\max}{|(\lambda {x}^{(n)}_i + \mu {y}^{(n)}_i) - (\lambda {a}_i + \mu  {b}_i)|}
   $$
   
   Воспользуемся неравенством треугольника и вынесем константы
   $$
-  \underset{\forall i=1, m}{\max}{|(\lambda \textbf {x}^{(n)}_i + \mu \textbf {y}^{(n)}_i) - (\lambda \textbf {a}_i + \mu \textbf {b}_i)|} \leq \underset{\forall i=1, m}{\max}{(|\lambda| |\textbf {x}^{(n)}_i - \textbf {a}_i| + |\mu| |\textbf {y}^{(n)}_i - \textbf {b}_i|)}
+  \underset{\forall i=1, m}{\max}{|(\lambda {x}^{(n)}_i + \mu {y}^{(n)}_i) - (\lambda {a}_i + \mu {b}_i)|} \leq \underset{\forall i=1, m}{\max}{(|\lambda| |{x}^{(n)}_i - {a}_i| + |\mu| |{y}^{(n)}_i - {b}_i|)}
   $$
   Поскольку максимум суммы не превосходит суммы максимумов, имеем
   $$
-  \underset{\forall i=1, m}{\max}{(|\lambda| |\textbf {x}^{(n)}_i - \textbf {a}_i| + |\mu| |\textbf {y}^{(n)}_i - \textbf {b}_i|)} \leq |\lambda| \underset{\forall i=1, m}{\max}{|\textbf {x}^{(n)}_i - \textbf {a}_i|} + \mu \underset{\forall i=1, m}{\max}{|\textbf {y}^{(n)}_i - \textbf {b}_i|}
+  \underset{\forall i=1, m}{\max}{(|\lambda| |{x}^{(n)}_i - {a}_i| + |\mu| |{y}^{(n)}_i - {b}_i|)} \leq |\lambda| \underset{\forall i=1, m}{\max}{|{x}^{(n)}_i - {a}_i|} + |\mu| \underset{\forall i=1, m}{\max}{|{y}^{(n)}_i - {b}_i|}
   $$
   Заметим, что в правой части неравенства стоит $\rho(\textbf {x}^{(n)}, \textbf {a})$ и $\rho(\textbf {y}^{(n)}, \textbf {b} )$. Таким образом
   $$
