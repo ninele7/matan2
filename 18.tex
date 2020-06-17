@@ -3,7 +3,7 @@
 
 Пусть векторная функция нескольких переменных
 \(f: \mathbb{R}^{n} \rightarrow \mathbb{R}^{m}\) определена в \(\delta\)
-- окрестности \(\mathrm{U}(a, \delta)\) точки \(a \in \mathbb{R}^{n} .\)
+- окрестности \(\mathrm{U}(a, \delta)\) точки \(a \in \mathbb{R}^{n} .\) \(\forall b \in  \mathbb{R}^{n}: 0 < \rho(a,b) < \delta  \)
 Обозначим через \(\Delta x_{i}\) такое приращение независимого
 переменного \(x_{i}\) в точке \(a,\) при котором точка
 \(a=\left(a_{1}, \ldots, a_{i-1}, a_{i}+\Delta x_{i}, a_{i+1}, \ldots, a_{n}\right)\)
@@ -14,7 +14,7 @@
 
 \[\Delta_{i} f\left(a, \Delta x_{i}\right)=f\left(a_{1}, \ldots, a_{i-1}, a_{i}+\Delta x_{i}, a_{i+1}, \ldots, a_{n}\right)-f\left(a_{1}, \ldots, a_{n}\right)\]
 
-Эту разность называют \textbf{частным преращением функции нескольких
+Эту разность называют \textbf{частным приращением функции нескольких
 переменных} \(f\) в точке \(a\) по независимому переменному \(x_{i} .\)
 Частное приращение обозначают также через \(\Delta_{i} f(a)\) или
 \(\Delta_{x_{i}} f(a)\)
@@ -70,7 +70,7 @@ f_{m}\left(a_{1}, \ldots, a_{i-1}, a_{i}+\Delta x_{i}, a_{i+1}, \ldots, a_{n}\ri
 \end{array}\right)
 \end{array}\]
 
-Основываясь на определении \textbf{частной производной}:
+По определению \textbf{частной производной}:
 
 \[\frac{\partial f(a)}{\partial x_{i}}=\lim _{\Delta x_{i} \rightarrow 0} \frac{\Delta_{i} f(a)}{\Delta x_{i}}=\lim _{\Delta x_{i} \rightarrow 0}\left(\begin{array}{c}
 \frac{\Delta_{i} f_{1}(a)}{\Delta x_{i}} \\
@@ -78,8 +78,8 @@ f_{m}\left(a_{1}, \ldots, a_{i-1}, a_{i}+\Delta x_{i}, a_{i+1}, \ldots, a_{n}\ri
 \frac{\Delta_{i} f_{m}(a)}{\Delta x_{i}}
 \end{array}\right)\]
 
-Проеобразуем:
-
+Проеобразуем: \\
+В силу сходимости в  \mathbb{R}^{m} - это покоординатная сходимость: \\
 \[\frac{\partial f(a)}{\partial x_{i}}=\left(\begin{array}{c}
 \lim _{\Delta x_{i} \rightarrow 0} \frac{\Delta_{i} f_{1}(a)}{\Delta x_{i}} \\
 \vdots \\
