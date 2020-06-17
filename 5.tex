@@ -1,6 +1,6 @@
 \section{Теорема Больцано-Вейерштрасса}
 
-1.\textcolor{red}{Формулировка}: Из любой ограниченной последовательности векторов $m$-мерного пространства можно выделить сходящуюся подпоследовательность.
+\subsection{Теорема 1} Из любой ограниченной последовательности векторов $m$-мерного пространства можно выделить сходящуюся подпоследовательность.
 
 Пусть $\{x^{(n)}\}_{n=1}^{\infty}$ - ограничена в $\mathbb {R}^m$. Тогда $\exists \{x^{(n_k)}\}_{n=1}^{\infty} \subseteq \{x^{(n)}\}_{n=1}^{\infty}$: $\exists a \in \mathbb {R}^m$
 
@@ -8,9 +8,9 @@ $a = \lim_{k\to\infty} x^{(n_k)}$
 
 \textcolor{red}{Доказательство}:
 
-$x^{(n)} = (x^{(n)}_1, x^{(n)}_2, ..., x^{(n)}_m)$ - ограничена, т.е. $x^{(n)} \in B(0, R) \Rightarrow$ 
+$x^{(n)} = (x^{(n)}_1, x^{(n)}_2, ..., x^{(n)}_m)$ - ограничена, т.е. $ x^{(n)} \in B(0, R) \Rightarrow$ 
 
-$\forall i=(1,2, ..., m) \{x^{(n)}_i\} $ (коорд. послед.) - ограничена в $\mathbb {R}$, т.к. $|x_i|\leq \rho(x, 0)$ (например, $\rho_1(x, 0) |x_i| \leq \sum_{i=1}^{m}|x_i|$)
+$ \forall i=(1, 2,..., m) \{x^{(n)}_i\} $ (коорд. послед.) - ограничена в $\mathbb {R}$, т.к. $ |x_i|\leq \rho(x, 0) $  (например, $ \rho_ 1 (x, 0) |x_i| \leq \sum_{i=1}^{m}|x_i|$)
 \vspace{1cm}
 
 $\{x^{(n)}_1\}^{\infty}_{n =1}$ - огр. в $\mathbb {R}$ $\Rightarrow $ $\exists \{x^{(n_{k_1})}_1\}_{k_1=1}^{\infty} \subseteq \{x^{(n)}_1\}_{n=1}^{\infty}$ : $ \exists \lim_{k_1\to\infty} x_1^{(n_{k_1})} = a_1 \in \mathbb {R}$ (по лемме Больцано-Вейерштрасса для последовательности)
@@ -18,15 +18,15 @@ $\{x^{(n)}_1\}^{\infty}_{n =1}$ - огр. в $\mathbb {R}$ $\Rightarrow $ $\exis
 
 Теперь рассмотрим:
 
-$x^{(n_{k_1})} = (x^{(n_{k_1})}_1, x^{(n_{k_1})}_2, ..., x^{(n_{k_1})}_m)$, где $x^{(n_{k_1})}_1 \rightarrow a_1$, при $k_1 \rightarrow \infty$
+$ x^{(n_{k_1})} = (x^{(n_{k_1})}_1 , x^{(n_{k_1})}_2 , ..., x^{(n_{k_1})}_m)$, где $x^{(n_{k_1})}_1 \rightarrow a_1$, при $k_1 \rightarrow \infty$
 
 Выделим сход. подпоследовательность для $\{x^{(n_{k_1})}_2\}$ - ограничена в $\mathbb {R}$ $\Rightarrow $
-$\exists \{x^{(n_{{k_1}_{k_2}})}_2\}_{k_2=1}^{\infty} \subseteq \{x^{(n_{k_1})}_2\}_{k_1=1}^{\infty}$: $ \exists \lim_{k_2\to\infty} x^{(n_{{k_1}_{k_2}})} = a_1 \in \mathbb {R}$
+$\exists \{x^{(n_{{k_1}_{k_2}})}_2\}_{k_2=1}^{\infty} \subseteq \{x^{(n_{k_1})}_2\}_{k_1=1}^{\infty}$: $ \exists \lim_{k_2\to\infty} x^{(n_{{k_1}_{k_2}})} = a_2 \in \mathbb {R}$
 \vspace{1cm}
 
-$x^{(n_{{k_1}_{k_2}})} = (x^{(n_{{k_1}_{k_2}})}_1, x^{(n_{{k_1}_{k_2}})}_2, ..., x^{(n_{{k_1}_{k_2}})}_m)$, где
+$ x^{(n_{{k_1}_{k_2}})} = (x^{(n_{{k_1}_{k_2}})}_1, x^{(n_{{k_1}_{k_2}})}_2 , ..., x^{(n_{{k_1}_{k_2}})}_m)$, где
 
-$x^{(n_{{k_1}_{k_2}})}_1 \rightarrow a_1$, при  $k_2 \rightarrow \infty$ (по свойству о сходимости подпосл.)
+$x^{(n_{{k_1}_{k_2}})}_1 \rightarrow a_1$, при $k_2 \rightarrow \infty$ (по свойству о сходимости подпосл.)
 
 $x^{(n_{{k_1}_{k_2}})}_2 \rightarrow a_2$, при  $k_2 \rightarrow \infty$
 
@@ -45,18 +45,18 @@ $x^{(n_{{{k_1}_{{...}_{k_m}}}})}_m \rightarrow a_m$, при  $k_m \rightarrow \i
 
 По критерию сходимости в $\mathbb {R}^m$:
 
-$x^{(n)}_i \rightarrow a_i \Rightarrow x^{(n)} \rightarrow a$
+$ x^{(n)}_i \rightarrow a_i \Rightarrow x^{(n)} \rightarrow a$
 \vspace{1cm}
 
 $\{x^{(n)}\}_{n=1}^{\infty}$ - \textcolor{red}{бесконечно большая}, если $\rho(x^{(n)}, 0) \rightarrow \infty$, при $n \rightarrow \infty$
 т.е. $\forall \epsilon > 0$ $\exists n_\epsilon \in \mathbb {N}$ $\forall n>n_\epsilon$ $\rho(x^{(n)}, 0) = |x^{(n)}|>\epsilon$
 \vspace{1cm}
 
-2.\textcolor{red}{Формулировка}: Из любой неограниченной последовательности векторов $m$-мерного пространства можно выделить бесконечно большую подпоследовательность.
+\subsection{Теорема 2} Из любой неограниченной последовательности векторов $m$-мерного пространства можно выделить бесконечно большую подпоследовательность.
 
 \textcolor{red}{Доказательство}:
 
-$\{x^{(n)}\}_{n=1}^{\infty}$ - неогравничено $\Rightarrow \exists k \in \mathbb {N}$: $\{x_k^{(n)}\}_{n=1}^{\infty}$ - неограничено
+$\{x^{(n)}\}_{n=1}^{\infty}$ - неограничено $\Rightarrow \exists k = 1,..,m$: $\{x_k^{(n)}\}_{n=1}^{\infty}$ - неограничено (иначе, если все координатные последовательности будут ограничены, то по критерию сходимости $\{x^{(n)}\}_{n=1}^{\infty}$ будет ограничена)
 
 Пусть $x_k^{(n_{{p}})} \rightarrow \infty$, при $p \rightarrow \infty$ 
 
@@ -64,5 +64,4 @@ $\{x_k^{(n_p)}\}_{p=1}^{\infty} \subseteq \{x_k^{(n)}\}_{n=1}^{\infty}$
 
 Tогда последовательность векторов будет б.б.:
 
-$\rho(x^{(n_p)}, 0) \ge |x^{(n_p)}_k| \rightarrow \infty$
-
+$ \rho(x^{(n_p)}, 0) \ge |x^{(n_p)}_k| \rightarrow \infty$
